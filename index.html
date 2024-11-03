@@ -158,7 +158,7 @@
 事实并非苏格拉底很快乐。
 也就是说：
 苏格拉底并不快乐。</p>
-<p class="whitespace-pre-wrap break-words">真值函数联结词（Truth-Functional Connectives）
+<p class="whitespace-pre-wrap break-words">【真值函数联结词（Truth-Functional Connectives）】
 Ls使用五种真值函数联结词：
 ¬   否定（事实并非...）
 ∧   连言（...并且...）
@@ -196,7 +196,7 @@ F  F    F</p>
 <p class="whitespace-pre-wrap break-words">逻辑语言Ls中的连接特征与英语中的连接相对应。一般来说，当英语句子用"and"连接时，所得到的复合句只有在其构成句子（即其合取项）都为真时才为真，否则为假。句子
 「苏格拉底是智慧的且快乐的。」
 当且仅当「苏格拉底是智慧的」和「苏格拉底是快乐的」这两个句子都为真时才为真。（需要注意，上述英语句子是「苏格拉底是智慧的且苏格拉底是快乐的」的一种文体变体。）</p>
-<p class="whitespace-pre-wrap break-words">真值函数</p>
+<p class="whitespace-pre-wrap break-words">【真值函数】</p>
 <p class="whitespace-pre-wrap break-words">Ls是一种真值函数语言，在这种语言中，每个句子的真值都是其组成句子的真值的函数——完全取决于其组成句子的真值。如果你知道简单句子的真值，就可以确定包含这些简单句子的任何复杂句子的真值。</p>
 <p class="whitespace-pre-wrap break-words">Ls中的联结词（¬, ∧, ∨, ⊃, ≡）都是真值函数联结词。这意味着它们是通过它们对所在句子的真值的贡献来定义的。</p>
 <p class="whitespace-pre-wrap break-words">把¬p或p ∧ q理解为函数——真值函数，正如x²是一个数学函数一样。</p>
@@ -237,17 +237,18 @@ P ∧ (Q ∧ ¬R)
 在第一个表达式中，否定符号的范围包括联结式(P ∧ 符号 Q)，但不包括右侧的联结项R。而在第二个表达式中，整个复合表达式都被否定。在最后一个表达式中，否定符号的范围仅包括最右边的联结项R。</p>
 <p class="whitespace-pre-wrap break-words">练习2.05
 使用 ¬ 和 ∧ 联结词将以下英语句子翻译成Ls。
-令 E = 埃尔维斯唱歌；F = 芬顿调查；G = 乔治逃跑；H = 荷马逃跑。
-1. 乔治和荷马逃跑。
-2. 荷马逃跑且乔治逃跑。
-3. 芬顿调查且荷马不逃跑。
-4. 并非芬顿调查且荷马不逃跑。
-5. 芬顿调查且埃尔维斯唱歌且乔治逃跑。
-6. 并非乔治和荷马逃跑。
-7. 荷马和乔治逃跑，且芬顿不调查。
-8. 荷马和乔治不逃跑。
-9. 芬顿不调查，且乔治和荷马不逃跑。
-10. 并非荷马和乔治逃跑且芬顿不调查。</p>
+令 E = 埃尔维斯唱歌；F = 芬顿调查；G = 乔治逃跑；H = 荷马逃跑。</p>
+<ol class="-mt-1 list-decimal space-y-2 pl-8" depth="0">
+<li class="whitespace-normal break-words" index="0">乔治和荷马逃跑。</li>
+<li class="whitespace-normal break-words" index="1">荷马逃跑且乔治逃跑。</li>
+<li class="whitespace-normal break-words" index="2">芬顿调查且荷马不逃跑。</li>
+<li class="whitespace-normal break-words" index="3">并非芬顿调查且荷马不逃跑。</li>
+<li class="whitespace-normal break-words" index="4">芬顿调查且埃尔维斯唱歌且乔治逃跑。</li>
+<li class="whitespace-normal break-words" index="5">并非乔治和荷马逃跑。</li>
+<li class="whitespace-normal break-words" index="6">荷马和乔治逃跑，且芬顿不调查。</li>
+<li class="whitespace-normal break-words" index="7">荷马和乔治不逃跑。</li>
+<li class="whitespace-normal break-words" index="8">芬顿不调查，且乔治和荷马不逃跑。</li>
+<li class="whitespace-normal break-words" index="9">并非荷马和乔治逃跑且芬顿不调查。</li>
 <h2 class="font-600 text-xl font-bold" level="2">2.06 析取符号：∨</h2>
 <p class="whitespace-pre-wrap break-words">第三种真值函数联结词表示析取，用楔形符号（∨）表示。在英语中，析取最常见的表达方式是"either...or..."，在中文中相当于"不是...就是..."，例如下面这个句子：</p>
 <p class="whitespace-pre-wrap break-words">不是下雨，就是阳光明媚。</p>
@@ -265,9 +266,9 @@ F F     F</p>
 <p class="whitespace-pre-wrap break-words">如果我们要详细说明使用上述句子时的真实含义，我们可能会这样表述：</p>
 <p class="whitespace-pre-wrap break-words">「艾奥拉会在周一或周二到达，但不会在这两天都到达。」</p>
 <p class="whitespace-pre-wrap break-words">这种结构表达的是排他析取：「不是...就是...，但不能同时都是」。从真值表可以看出，在Ls中，如果两个析取项都为真，析取式也为真——也就是说「不是...就是...，两种情况可能同时成立」。虽然这种结构（包容析取）在英语中出现的频率低于排他析取，但确实存在。考虑这个句子：</p>
-<p class="whitespace-pre-wrap break-words">「员工在周末或节假日工作将获得一倍半工资。」这种条款通常会出现在劳动合同中。这当然意味着，在正常工作时间以外工作的情况下，你将获得额外报酬：比如说在周末、节假日，或同时符合这两种情况。假设上周六恰逢元旦，如果雇主以此为由，声称同时属于周末和节假日的工作日无需支付1.5倍工资而拒绝支付，你一定会对这种狭义解释的做法感到愤怒。
-有歧义的句子</p>
-<p class="whitespace-pre-wrap break-words">前面练习中的一些句子存在歧义，它们可能有不同的含义，因此可以有多种翻译方式。请指出哪些句子存在歧义。请注意在选择不同含义时，是否需要采用不同的 Ls 翻译方式。</p>
+<p class="whitespace-pre-wrap break-words">「员工在周末或节假日工作将获得一倍半工资。」这种条款通常会出现在劳动合同中。这当然意味着，在正常工作时间以外工作的情况下，你将获得额外报酬：比如说在周末、节假日，或同时符合这两种情况。假设上周六恰逢元旦，如果雇主以此为由，声称同时属于周末和节假日的工作日无需支付1.5倍工资而拒绝支付，你一定会对这种狭义解释的做法感到愤怒。</p>
+<p class="whitespace-pre-wrap break-words">【有歧义的句子】
+前面练习中的一些句子存在歧义，它们可能有不同的含义，因此可以有多种翻译方式。请指出哪些句子存在歧义。请注意在选择不同含义时，是否需要采用不同的 Ls 翻译方式。</p>
 <p class="whitespace-pre-wrap break-words">要表达一般意义上的析取，区分排他性析取（"或者...或者..."，但不能两者都是）和Ls式包容性析取（"或者...或者..."，可能两者都是）很重要。你可能会觉得逻辑学家选择在Ls中用包容性方式定义析取很奇怪，但原因很简单：使用析取符号（∨）来表示包容性析取，你可以同时实现两种目的。通过巧妙构造，你就能构建出既表达排他性析取又表达包容性析取的句子。</p>
 <p class="whitespace-pre-wrap break-words">假设Ls句子W用来表达"苏格拉底是智慧的"，H表达"苏格拉底是快乐的"，B表达"苏格拉底是无聊的"。有了这些解释，再加上我们对真值函数联结词（¬、∧和∨）的理解，你就能产生无数复杂的Ls句子。考虑以下例子及其中文对应：</p>
 <p class="whitespace-pre-wrap break-words">(W ∧ B) ∨ H
@@ -297,7 +298,7 @@ M ∨ T
 (M ∨ T) ∧ ¬(M ∧ T)
 这个复杂表达式的第一个合取项表达了英语句子的析取方面，而第二个合取项表达了其排他性方面。</p>
 <p class="whitespace-pre-wrap break-words">在实践中，将英语析取式翻译成逻辑句子时，你可以采用以下原则：将析取式译为包容性析取（即仅使用∨），除非这些句子只能被理解为排他性析取。即便一个句子既可理解为包容性析取也可理解为排他性析取，也应该仅用∨来翻译。</p>
-<p class="whitespace-pre-wrap break-words">Ls语言中的歧义
+<p class="whitespace-pre-wrap break-words">【Ls语言中的歧义】
 Ls语言使用常见的数学惯例，即用括号来消除句子的歧义。（当一个句子的本意被明确化时，就称为消除了歧义。）表达式
 A ∨（析取）B ∧（合取）C
 存在歧义，可解释为：
@@ -306,17 +307,17 @@ A ∨（析取）B ∧（合取）C
 A ∨ (B ∧ C)
 Ls语言不允许含有歧义的句子，因此第一个表达式不是Ls的合法句子。通过按照上述两种方式之一添加括号，它可以变成合法句子。这两个句子的含义相同吗？</p>
 <p class="whitespace-pre-wrap break-words">练习2.06
-使用¬（否定）、∧（合取）和∨（析取）联结词，将以下英语句子翻译成Ls。设E = 埃尔维斯唱歌；F = 芬顿调查；G = 乔治逃跑；H = 荷马逃跑。
-1. 埃尔维斯唱歌且荷马逃跑。
-2. 荷马逃跑或乔治没有逃跑。
-3. 芬顿调查，且要么荷马没有逃跑要么乔治逃跑。
-4. 并非芬顿调查或荷马没有逃跑。
-5. 要么芬顿没有调查，要么荷马没有逃跑。
-6. 荷马或乔治其中一人逃跑，但非两者。
-7. 埃尔维斯唱歌且荷马和乔治逃跑，或者芬顿没有调查。
-8. 荷马或乔治没有逃跑。
-9. 芬顿没有调查或埃尔维斯没有唱歌，但不会同时发生。</p>
+使用¬（否定）、∧（合取）和∨（析取）联结词，将以下英语句子翻译成Ls。设E = 埃尔维斯唱歌；F = 芬顿调查；G = 乔治逃跑；H = 荷马逃跑。</p>
 <ol class="-mt-1 list-decimal space-y-2 pl-8" depth="0">
-<li class="whitespace-normal break-words" index="0">要么埃尔维斯唱歌，要么乔治或荷马逃跑。</li>
+<li class="whitespace-normal break-words" index="0">埃尔维斯唱歌且荷马逃跑。</li>
+<li class="whitespace-normal break-words" index="1">荷马逃跑或乔治没有逃跑。</li>
+<li class="whitespace-normal break-words" index="2">芬顿调查，且要么荷马没有逃跑要么乔治逃跑。</li>
+<li class="whitespace-normal break-words" index="3">并非芬顿调查或荷马没有逃跑。</li>
+<li class="whitespace-normal break-words" index="4">要么芬顿没有调查，要么荷马没有逃跑。</li>
+<li class="whitespace-normal break-words" index="5">荷马或乔治其中一人逃跑，但非两者。</li>
+<li class="whitespace-normal break-words" index="6">埃尔维斯唱歌且荷马和乔治逃跑，或者芬顿没有调查。</li>
+<li class="whitespace-normal break-words" index="7">荷马或乔治没有逃跑。</li>
+<li class="whitespace-normal break-words" index="8">芬顿没有调查或埃尔维斯没有唱歌，但不会同时发生。</li>
+<li class="whitespace-normal break-words" index="9">要么埃尔维斯唱歌，要么乔治或荷马逃跑。</li>
 </ol>
 </div></div></div></body></html>
