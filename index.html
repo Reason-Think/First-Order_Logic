@@ -165,7 +165,7 @@ T    F
 F    T</p>
 <p class="whitespace-pre-wrap break-words">请注意，该表使用了命题变项p，而不是某个特定的句子。这在一定程度上对这个定义赋予了其原本没有的概括性。真值表表明，对于任何Ls句子p，如果p为真，则¬p为假;如果p为假，则¬p为真。那么，否定则是颠倒它所连接的句子的真值。在这方面，Ls中的否定类似于汉语中的否定。如果句子"苏格拉底是智慧的"为真，那么"并非苏格拉底是智慧的”这个句子为假，(或"苏格拉底不是智慧的"为假);如果原句为假，其否定则为真。</p>
 <p class="whitespace-pre-wrap break-words">Ls是一种真值函数语：Ls中每个句子的真值都是其成分句（constituent sentences）的真值所决定的函数。在实践中，这意味着，就给定的任意Ls句子p，如果你知道(i)其成分句（constituent sentences）的真值，和(ii)真值函数联结词的定义，你就能准确地确定该句子的真值(即判断其真假)。如果你知道句子A为假，那么(根据上述定义)你就知道¬A为真，以此类推。</p>
-<p class="whitespace-pre-wrap break-words">真值函数联结词(Truth-Functional Connectives) 
+<p class="whitespace-pre-wrap break-words">【真值函数联结词(Truth-Functional Connectives) 】
 Ls使用五种真值函数联结词：
 ¬  否定(并非...)
 ∧ 合取(..并且...)
@@ -194,7 +194,7 @@ F F       F</p>
 <p class="whitespace-pre-wrap break-words">∧ 符号两边的句子称为合取项。每使用一次∧ 都涉及一对合取项。因此，我们需要考虑四种可能的真值组合：(一)可能两个合取项都为真;(二)可能第一个为真，第二个为假;(三)可能第一个为假，第二个为真;(四)可能两个合取项都为假。</p>
 <p class="whitespace-pre-wrap break-words">∧ 的真值表显示了在给定了这些组合中每一个合取项的真值时，得到的整个合取式的真值结果。合取式只有在其两个合取项都为真时才为真(这种情况体现在表格的第一行)。在其他所有情况下，所得到的合取式都为假——正如其余各行所示。</p>
 <p class="whitespace-pre-wrap break-words">逻辑语言Ls中的连接特征与英语中的连接相对应。一般来说，当英语句子用"and"连接时，只有在其成分句(即其合取项)都为真时所得到的复合句才为真，否则为假。“苏格拉底是智慧的且快乐的。”这个句子，当且仅当“苏格拉底是智慧的”和“苏格拉底是快乐的”这两个句子都为真时，才为真。(需要注意，上述汉语句子是“苏格拉底是智慧的且苏格拉底是快乐的”的一种文体变体。)</p>
-<p class="whitespace-pre-wrap break-words">[真值函数]</p>
+<p class="whitespace-pre-wrap break-words">【真值函数】</p>
 <p class="whitespace-pre-wrap break-words">Ls是一种真值函数语言。在这种语言中，每个句子都是一个函数，其真值完全由其成分句（constituent sentences）的真值决定。如果你知道简单句子的真值，就可以确定包含这些简单句子的任何复杂句子的真值。</p>
 <p class="whitespace-pre-wrap break-words">Ls中的联结词 (¬,∧,∨, ⊃,≡) 都是真值函数联结词。这意味着它们的定义是由它们对其所在的句子所起的作用而决定的。</p>
 <p class="whitespace-pre-wrap break-words">把¬p或p∧q理解为函数——真值函数——正如x2是一个数学函数一样。</p>
@@ -235,17 +235,19 @@ P ∧ (Q∧ ¬ R)</p>
 <p class="whitespace-pre-wrap break-words">在第一个表达式中，否定符号的范围包括联结式(P∧Q)，但不包括右侧的联结项R。而在第二个表达式中，整个复合表达式都被否定。在最后一个表达式中，否定符号的范围仅包括最右边的联结项R。</p>
 <p class="whitespace-pre-wrap break-words">练习2.05
 使用¬和联结词将以下汉语句子翻译成Ls。</p>
-<p class="whitespace-pre-wrap break-words">令E=埃尔维斯唱歌;F=芬顿调查;G=乔治逃跑;H=荷马逃跑。
-1. 乔治和荷马逃跑。
-2. 荷马逃跑且乔治逃跑。
-3. 芬顿调查且荷马不逃跑。
-4. 并非芬顿调查且荷马不逃跑。
-5. 芬顿调查且埃尔维斯唱歌且乔治逃跑。
-6. 并非乔治和荷马逃跑。
-7. 荷马和乔治逃跑，且芬顿不调查。
-8. 荷马和乔治不逃跑。
-9. 芬顿不调查，且乔治和荷马不逃跑。
-10. 并非荷马和乔治逃跑且芬顿不调查。</p>
+<p class="whitespace-pre-wrap break-words">令E=埃尔维斯唱歌;F=芬顿调查;G=乔治逃跑;H=荷马逃跑。</p>
+<ol class="-mt-1 list-decimal space-y-2 pl-8" depth="0">
+<li class="whitespace-normal break-words" index="0">乔治和荷马逃跑。</li>
+<li class="whitespace-normal break-words" index="1">荷马逃跑且乔治逃跑。</li>
+<li class="whitespace-normal break-words" index="2">芬顿调查且荷马不逃跑。</li>
+<li class="whitespace-normal break-words" index="3">并非芬顿调查且荷马不逃跑。</li>
+<li class="whitespace-normal break-words" index="4">芬顿调查且埃尔维斯唱歌且乔治逃跑。</li>
+<li class="whitespace-normal break-words" index="5">并非乔治和荷马逃跑。</li>
+<li class="whitespace-normal break-words" index="6">荷马和乔治逃跑，且芬顿不调查。</li>
+<li class="whitespace-normal break-words" index="7">荷马和乔治不逃跑。</li>
+<li class="whitespace-normal break-words" index="8">芬顿不调查，且乔治和荷马不逃跑。</li>
+<li class="whitespace-normal break-words" index="9">并非荷马和乔治逃跑且芬顿不调查。</li>
+</ol>
 <h2 class="font-600 text-xl font-bold" level="2">2.06 析取符号：∨</h2>
 <p class="whitespace-pre-wrap break-words">第三种真值函数联结词表示析取，用楔形符号∨表示。在英语中，析取最常见的表达方式是"either...or..."，在中文中相当于"……或…”，例如下面这个句子：</p>
 <p class="whitespace-pre-wrap break-words">在下雨，或，阳光明媚。</p>
@@ -264,7 +266,7 @@ F F    F</p>
 “Iola会在周一或周二到达，但不会在这两天都到达。”</p>
 <p class="whitespace-pre-wrap break-words">这种结构表达的是不相容析取式：“A为真，或，B为真，但A、B不能同时为真”。从真值表可以看出，在Ls中，如果两个析取项都为真，析取式也为真———也就是说“A为真，或，B为真，并且A、B可以同时为真”。虽然这种结构(相容析取)在汉语中出现的频率低于不相容析取，但确实存在。考虑这个句子：</p>
 <p class="whitespace-pre-wrap break-words">“员工在周末或节假日工作将获得1.5倍工资。”这种句子可能会出现在劳动合同条款中。它的意思是说，在正常工作时间以外工作的情况下，员工将获得额外报酬：在周末、节假日，或同时属于这两者的情况。假设上周六恰逢元旦，而你加班了数个小时。如果你的雇主坚持以不相容析取的方式解读上述条款，声称上周六既是周末又是节假日，被排除在应付1.5倍工资的情况之外。若你的雇主以此为由拒绝按照1.5倍支付你的劳动报酬，你一定不会给他好脸色看的。</p>
-<p class="whitespace-pre-wrap break-words">[有歧义的句子]
+<p class="whitespace-pre-wrap break-words">【有歧义的句子】
 前面练习中的一些句子存在歧义，它们可能有两种以上不同的含义，因此可以有多种解读版本。请指出哪些句子存在歧义。请注意在选择不同含义时，是否需要采用不同的Ls翻译方式。</p>
 <p class="whitespace-pre-wrap break-words">要表达一般意义上的析取，重要的是要区分不相容析取(“A为真，或，B为真，但A、B不能同时为真”)和相容析取(“A为真，或，B为真，并且A、B可以同时为真”)。你可能会觉得逻辑学家选择在Ls中用相容方式定义析取很奇怪，但原因很简单：使用析取符号∨来表示相容析取，你可以同时实现两种目的。通过巧妙构造，你就能构建出既表达不相容析取又表达相容析取的句子。</p>
 <p class="whitespace-pre-wrap break-words">假设Ls句子W用来表达"苏格拉底是智慧的"，H表达"苏格拉底是快乐的"，B表达"苏格拉底是无聊的"。有了这些解释，再加上我们对真值函数联结词(¬、∧和∨)的理解，你就能产生无数复杂的Ls句子。考虑以下例子及其中文对应：</p>
