@@ -321,4 +321,211 @@ Ls语言不允许含有歧义的句子，因此第一个表达式不是Ls的合�
 <li class="whitespace-normal break-words" index="8">芬顿没有调查或埃尔维斯没有唱歌，但不会同时发生。</li>
 <li class="whitespace-normal break-words" index="9">要么埃尔维斯唱歌，要么乔治或荷马逃跑。</li>
 </ol>
+<h2 class="font-600 text-xl font-bold" level="2">2.07 条件句：⊃</h2>
+<p class="whitespace-pre-wrap break-words">Ls逻辑中的第四个真值函数连接词是条件句。蹄形符号⊃，如下面真值表所刻画的，在Ls中大致表达了英语中"...仅当..."和"如果...那么..."这些短语所表达的含义。条件句在Ls中起着核心作用，将其与英语中的"如果...那么..."句子进行比较，就能更好地理解这一点。首先，让我们看看⊃的真值表定义：</p>
+<p class="whitespace-pre-wrap break-words">p q  p ⊃ q
+T T    T
+T F    F
+F T    T
+F F    T</p>
+<p class="whitespace-pre-wrap break-words">将p ⊃ q读作"p为真（T）仅当q为真（T）"或"如果p为真（T），那么q为真（T）"，你就能开始看出Ls中的条件句与英语中的条件句有多么接近。真值表的前两行很好地符合我们在学习Ls之前对条件句的理解。当前件（条件句中的假设部分，即⊃左边的句子）和后件（条件句中的结论部分，即右边的句子）都为真时，条件断言为真。同样，当前件为真而后件为假时，条件句显然为假。</p>
+<p class="whitespace-pre-wrap break-words">比如，考虑这些英语句子：
+下雨仅当街道是湿的。
+和
+如果下雨，那么街道是湿的。</p>
+<p class="whitespace-pre-wrap break-words">这两个句子都可以被翻译成Ls为：
+R ⊃ W</p>
+<p class="whitespace-pre-wrap break-words">如果我作出这个条件断言，而你发现正在下雨且街道是湿的，也就是说，当你发现它的前件和后件都为真时，你不会对此提出异议。这对应于真值表定义的第一行。如果你发现正在下雨（条件句的前件为真）而街道不湿（后件为假），你会如真值表第二行所示判定我的条件句为假。</p>
+<p class="whitespace-pre-wrap break-words">现在想象一个情况，你的观察对应于真值表的第三行和第四行。假设，比如说，你观察到没有下雨但街道却是湿的（真值表第三行），或者没有下雨且街道也不湿（最后一行）。在这些情况下，你认为我所说的是真的，这种判断是否显而易见？</p>
+<p class="whitespace-pre-wrap break-words">【真值与真值条件】</p>
+<p class="whitespace-pre-wrap break-words">每个Ls语句都有一组真值条件：即使其为真的那些情况，以及使其为假的那些情况。</p>
+<p class="whitespace-pre-wrap break-words">每个Ls语句也都有一个真值：或真或假。</p>
+<p class="whitespace-pre-wrap break-words">一个语句的真值由以下因素确定：
+（一）该语句的真值条件；
+（二）语句被表述时世界的状态。</p>
+<p class="whitespace-pre-wrap break-words">你可以知道一个语句的真值条件而不知道它的真值。例如「在金星北极一公里范围内有一磅金子」这个句子，你知道它的真值条件——你知道什么情况会使它为真或为假，但你无法确定其真假。</p>
+<p class="whitespace-pre-wrap break-words">对这个问题，一个简短但不尽人意的回答是，既然这些观察结果不会导致条件句为假，那么它就必定为真。在Ls中的句子必须是真或假之一，所以一个不为假的Ls句子就必然为真。</p>
+<p class="whitespace-pre-wrap break-words">然而，对英语句子来说可能并非如此。当你观察到晴朗的天空和干燥的街道时，这可能并不表明该句子为假，但你的观察也不表明它为真。也许当英语条件句的前件为假时，这些条件句既不为真也不为假；也许在这些情况下它们根本就没有逻辑真值。</p>
+<p class="whitespace-pre-wrap break-words">虽然这种可能性不能忽视，但对英语条件句和Ls条件句之间表面上的不匹配，可能存在更简单的解释。</p>
+<p class="whitespace-pre-wrap break-words">通过思考普通英语条件句的逻辑，你可以对此有所感悟。让我们回到原始句子
+"如果下雨，那么街道就是湿的。"
+我认为，这个句子等同于"只有当街道是湿的时候才下雨"以及Ls中的蕴含符号句子
+R ⊃ W</p>
+<p class="whitespace-pre-wrap break-words">这个条件句有个显而易见的特点：在说出它时，我不需要关心当时是否在下雨，或者街道是否恰好是湿的。实际上，我想表达的是"下雨且街道不湿"这种情况是假的。更一般地说，"如果p，那么q"表明你不可能在q为假的情况下使p为真。这一点在真值表中蕴含符号（⊃）的第二行得到了明确体现。</p>
+<p class="whitespace-pre-wrap break-words">假设你将这个句子的解释翻译成Ls：
+¬(R ∧ ¬W)
+并且假设你同意这个否定连接确实合理地表达了我在断言原始条件句时的意思。这对我们理解Ls中条件句的本质特征有什么启示？这似乎表明英语句子
+"只有当街道是湿的时候才下雨。"
+与下面这个句子是等价的：
+"不存在既下雨又街道不湿的情况。"
+那么问题来了：说两个句子具有相同的意思究竟是什么意思？</p>
+<p class="whitespace-pre-wrap break-words">考虑当你理解上述句子的含义时你知道些什么。不管你还知道什么，你都知道该句子在什么条件下为真或为假；你知道句子的真值条件。需要再强调的是，这并不意味着你知道该句子是真是假。你知道"此刻圣彼得大教堂的圆顶上的鸽子数量是偶数"这个句子的真值条件。也就是说，你知道什么情况会使它为真，什么情况会使它为假，尽管你完全不知道这个句子实际上是真是假。</p>
+<p class="whitespace-pre-wrap break-words">这表明句子的含义与其真值条件有着某种重要的联系。至少可以认为，具有相同含义的两个句子应该具有相同的真值条件。例如，在从一种语言翻译到另一种语言时，目标就是找到具有相同真值条件的句子。</p>
+<p class="whitespace-pre-wrap break-words">在推导普通英语句子的真值条件时，我们不得不依赖于语感。但在Ls中情况则不同。因为Ls是一种真值运算语言，其真值运算连接词具有精确的定义。因此，你可以轻松地确定任何Ls句子的真值条件。要做到这一点，你只需要为相关句子构建真值表即可。</p>
+<p class="whitespace-pre-wrap break-words">我们目前只是用真值表来提供连接词的形式化定义。但有了这些定义，你就能够设计特定Ls句子的真值表分析，这些分析为任何可在Ls中表达的句子提供了清晰的真值条件说明。考虑Ls句子：
+R ⊃ W
+你可以简单地构建一个真值表来明确这个句子的真值条件。要做到这一点，你只需要回想⊃连接词的真值表定义：
+p  q   p ⊃ q
+T  T   T     (真)
+T  F   F     (假)
+F  T   T     (真)
+F  F   T     (真)</p>
+<p class="whitespace-pre-wrap break-words">这个真值表基本上表明，在Ls中条件句为真，除非其前件（antecedent，即左边的成分）为真而后件（consequent，右边的成分）为假，这种情况出现在真值表的第二行。</p>
+<p class="whitespace-pre-wrap break-words">将这些信息应用到Ls条件句中，得到以下真值表：
+R W  R ⊃ W
+T T  T
+T F  F
+F T  T
+F F  T</p>
+<p class="whitespace-pre-wrap break-words">句子R和W各自可以为真或假，因此这些句子有四种可能的真值组合需要考虑。⊃的真值表特征表明，当Ls条件句的前件为真而后件为假时为假；在其他情况下都为真。综上所述，我们得到了上面的真值表。</p>
+<p class="whitespace-pre-wrap break-words">这个真值表明确地显示了原始句子的真值条件。只要你能重构其真值表，就可以说你知道其真值条件。如前所述，知道一个句子的真值条件与知道其真值并不相同。一个句子是否为真取决于真值表中的哪一行对应实际情况。</p>
+<p class="whitespace-pre-wrap break-words">你可以把真值表的每一行都看作是描述了一组可能世界，即世界可能的存在方式。知道一个给定句子的真值条件就是要知道它在每个可能世界中的真值，也就是知道如果宇宙处于特定状态时它的真值会是什么。</p>
+<p class="whitespace-pre-wrap break-words">这可能看起来是一项艰巨的任务，但这种看法是有误导性的。虽然存在无限多的可能宇宙，但句子R和W的真值组合只有四种可能。真值表揭示了在任何世界中——也就是在任何情况下——当R为真而W为假时，条件句R ⊃ W为假；在其他情况下都为真。如果你同时知道一个句子的真值条件及其真值（即知道它是否为真），那么你就能确定这些可能世界中哪一组包含了我们的宇宙。</p>
+<p class="whitespace-pre-wrap break-words">【‘可能世界’】</p>
+<p class="whitespace-pre-wrap break-words">引入可能世界概念来阐明哲学话题始于哲学家莱布尼茨(1646-1716)。莱布尼茨指出，现实世界本可以在无数方面有所不同。这些可能的不同方式，每一种都构成一个可能世界。</p>
+<p class="whitespace-pre-wrap break-words">莱布尼茨因主张只有假设现实世界是所有可能世界中最好的，才能解释现实世界为何存在而闻名。这引发了伏尔泰(1694-1778)的讽刺回应："如果这就是最好的可能世界，那其他世界我都不敢想象了！"</p>
+<p class="whitespace-pre-wrap break-words">可能世界（除了现实世界之外）真的存在吗？一些哲学家认为它们确实存在，理由是客观上确实存在现实世界可能出现的其他形式。其他人则将可能世界的讨论视为一种便于理解的假设。</p>
+<p class="whitespace-pre-wrap break-words">现在让我们回到我之前提到的Ls语句，这个语句接近于表达我们在陈述普通英语条件句时的意思。起点是这个句子：
+如果下雨，那么街道就是湿的。
+我的建议是，这个句子与下面这个句子具有相同的真值条件：
+不可能同时出现下雨和街道不湿的情况。
+这可以被翻译成Ls语言为：
+¬(R ∧ ¬W)
+当我们为这个句子制作真值表并将其真值条件与原始条件句的真值条件进行比较时会发生什么？</p>
+<p class="whitespace-pre-wrap break-words">要为这个句子构建真值表，你首先需要将句子分解成其组成部分。也就是说，在确定整个句子的真值条件之前，你必须确定
+R ∧ ¬W
+这个括号内句子的真值条件。但在计算这个句子的真值条件之前，你首先需要计算其右侧合取项
+¬W
+的真值条件。</p>
+<p class="whitespace-pre-wrap break-words">有了这些信息，你就可以为整个句子构建真值表。下面是真值表的具体内容：
+R W  ¬W  R ∧ ¬W  ¬(R ∧ ¬W)
+T T  F   F   T
+T F  T   T   F
+F T  F   F   T
+F F  T   F   T</p>
+<p class="whitespace-pre-wrap break-words">最左侧的两列提供了R和W真值可能组合的一览表。下一列列出了¬W的真值条件，即在W取特定真值的情况下『¬W』的真值。根据否定词『¬』的真值表定义，当W为真时¬W为假，当W为假时¬W为真。</p>
+<p class="whitespace-pre-wrap break-words">现在，根据合取词『∧』的真值表特征，我们可以确定合取句R ∧ ¬W的真值条件。合取句只有在其两个合取项都为真时才为真，否则为假。因此，合取句R ∧ ¬W只在真值表中（即那些可能世界中的）R和¬W都为真的情况下为真。需要参考的是R列和¬W列。</p>
+<p class="whitespace-pre-wrap break-words">在确定了合取句R ∧ ¬W的真值条件之后，我们只需要确定这个合取句的否定的真值条件。回顾Ls中否定的真值表特征，我们知道否定一个句子会反转其真值：真句子被否定后为假，假句子的否定为真。因此，当句子R ∧ ¬W为真时，其否定¬(R ∧ ¬W)为假，当R ∧ ¬W为假时，其否定为真。这反映在真值表的最右列中。</p>
+<p class="whitespace-pre-wrap break-words">我们所构造的真值表为Ls句子提供了明确的形式化表示，我认为这个句子接近于捕捉原始英语条件句的含义。条件句"如果下雨，那么街道是湿的"等同于"不可能同时出现下雨且街道不湿的情况"。如果你将该真值表与相应的Ls条件句的真值表进行比较，你可以看到它们完全匹配：</p>
+<p class="whitespace-pre-wrap break-words">R W  ¬(R ∧ ¬W)  R ⊃ W
+T T  T  T
+T F  F  F
+F T  T  T
+F F  T  T</p>
+<p class="whitespace-pre-wrap break-words">真值表清楚地表明，这两个Ls句子的真值条件是相同的。这意味着，就本文讨论的范围而言，这些句子具有相同的含义。既然其中一个形式与英语原句相近，另一个也必然如此。</p>
+<p class="whitespace-pre-wrap break-words">【理解条件句】</p>
+<p class="whitespace-pre-wrap break-words">假设你知道某个罐子里的所有球都是同一种颜色，而但你不知道具体是什么颜色。在这种情况下，你知道条件句「如果球A是红色的，那么球B是红色的」是真的，即使「球A是红色的」和「球B是红色的」都是假的——这种情况对应于真值表的最后一行。</p>
+<p class="whitespace-pre-wrap break-words">这一切表明，Ls（逻辑符号系统）中的条件句与英语中「如果……那么……」句子的含义比人们通常认为的更接近。但这并不意味着英语中的条件结构总是以Ls的方式表达条件关系。包含「如果……那么……」从句的英语句子可以用来表达其他关系。起初，当你开始将英语句子翻译成Ls时，这可能会引起时不时的困扰。有时，看似符合Ls形式的英语句子实际上根本就不是条件句。不过，只要坚持下去，这些困难就会迎刃而解，翻译工作也会变得水到渠成。</p>
+<h2 class="font-600 text-xl font-bold" level="2">2.08 条件句、依赖性和句子标点</h2>
+<p class="whitespace-pre-wrap break-words">Ls中条件句还有一个需要注意的特征。在描述"如果下雨，那么街道就是湿的"这样的条件句时，我们很容易将结果句"街道是湿的"视为依赖于前提"下雨"的条件。然而，这种理解并不准确。条件句所表达的是：如果前提为真，那么结果也为真（否则条件句为假）。这并不等同于说结果在因果关系上依赖于前提。</p>
+<p class="whitespace-pre-wrap break-words">这种区别很容易被忽视，因为条件句经常用来表达因果关系。考虑这个句子：
+如果你喝环氧树脂，你会后悔的（你会后悔喝环氧树脂）。</p>
+<p class="whitespace-pre-wrap break-words">当你听到这个句子时，你可能自然而然地会想象到喝环氧树脂和随后的后悔之间存在因果联系。你的后悔是由喝环氧树脂引起的。然而，考虑到"如果...那么..."句子等同于"...仅当..."句子，上述句子可以改写为：
+只有当你会后悔时，你才会喝环氧树脂。</p>
+<p class="whitespace-pre-wrap break-words">这种改写感觉不对劲。它似乎颠倒了依赖关系：现在看起来好像是你的后悔导致了你喝环氧树脂！</p>
+<p class="whitespace-pre-wrap break-words">这是一种误导。它源于我们倾向于混淆逻辑联系和因果关系。原句表达了条件句与其组成句子"你喝环氧树脂"和"你会后悔"之间的一种特定逻辑联系：如果第一个为真，那么第二个也为真。换句话说，不可能第一个为真而第二个为假。无疑，使这个句子为真的是喝环氧树脂和后悔之间的因果关系。但你可以独立于决定句子真假的现实世界来考虑句子所表达的逻辑联系。条件句的结构正是要求我们这样思考。</p>
+<p class="whitespace-pre-wrap break-words">在实践中，你可以通过明确关注句子的真值条件（即使句子为真或为假的条件）来习惯区分逻辑联系和因果关系。面对"如果你喝环氧树脂，那么你会后悔"这个句子时，你首先注意到这个句子包含两个组成部分："你喝环氧树脂"和"你会后悔"。接下来的任务是理清这两个句子之间的逻辑联系，也就是思考原条件句的真值条件与构成该句子的前提和结果句的真值条件之间的关系。只有当（i）"你喝环氧树脂"这句话为真且（ii）"你会后悔"这句话为假时，条件句才为假（无论出于什么原因）：第一句为真必须第二句也为真。这正是在Ls中由「⊃」连接词所表达的。虽然说出这个英语句子的人无疑会传达出比这种逻辑关系更多的含义，但至少表达了这一点。</p>
+<p class="whitespace-pre-wrap break-words">在将英语中的"if...then..."条件句翻译成Ls时，首先要找到if子句。if子句所对应的句子应该放在条件符号的左边。虽然这看起来很明显，但当if子句藏在句子中间，或者跟在结果then子句之后时，就不那么明显了。你可以说：</p>
+<p class="whitespace-pre-wrap break-words">如果下雨，那么街道就是湿的。
+或者
+街道是湿的，如果下雨的话。</p>
+<p class="whitespace-pre-wrap break-words">这两句话都被翻译成Ls为：
+R ⊃ W</p>
+<p class="whitespace-pre-wrap break-words">在翻译第二句时，你首先要找到if子句"下雨"，并将其识别为条件句的前件。</p>
+<p class="whitespace-pre-wrap break-words">if子句和only-if子句是不同的。形如
+p, if q
+的句子被翻译成Ls为：
+q ⊃ p</p>
+<p class="whitespace-pre-wrap break-words">相反，形如
+p only if q
+的句子在Ls中表示为：
+p ⊃ q</p>
+<p class="whitespace-pre-wrap break-words">考虑这个英语句子：
+如果芬顿调查，格特鲁德就会离开。</p>
+<p class="whitespace-pre-wrap break-words">假设G ="格特鲁德会离开"且F ="芬顿调查"，这句话可以被翻译成Ls为：
+F ⊃ G</p>
+<p class="whitespace-pre-wrap break-words">这句话与表面上相似的句子有很大不同：
+格特鲁德只有在芬顿调查时才会离开。</p>
+<p class="whitespace-pre-wrap break-words">正如其Ls翻译所显示的：
+G ⊃ F</p>
+<p class="whitespace-pre-wrap break-words">因此，在面对英语条件句时，首先要找到if子句。这就是条件句中的前件——除非是only-if子句。在那种情况下，该子句则作为条件句的后件。</p>
+<p class="whitespace-pre-wrap break-words">对于更复杂的条件句，原理是相同的。在第2.05节中介绍了括号，用来消除句子的歧义。否定符号遵循这样的规则：否定符号仅适用于其右侧的直接相邻句子。因此，在句子
+¬A ⊃ B
+中，只有A被否定，而在句子
+¬(A ⊃ B)
+中，否定符号适用于整个条件句A ⊃ B。</p>
+<p class="whitespace-pre-wrap break-words">现在考虑这个有歧义的表达式：
+A ⊃ B ∧ C
+这个表达式可以被理解为一个条件句，其后件是一个合取式：A ⊃ (B ∧ C)
+但该表达式也可以解释为一个连言式，其左连言项是一个条件句：
+(A ⊃ B) ∧ C
+略加思考就会发现，这两个句子各自的真值条件是不同的。遵循如下原则可以避免潜在的歧义：任何句子都不能与多个不同的句子共用连接词。原表达式的歧义违反了这一原则：B与A共用连接词⊃，同时又与C共用连接词∧。通过添加括号，歧义就消除了。在句子
+(A ⊃ B) ∧ C
+中，A和B由⊃连接，而(A ⊃ B)和C由∧连接。</p>
+<p class="whitespace-pre-wrap break-words">练习2.08
+将以下句子翻译成Ls，使用¬、∧、∨和⊃连接词。如果英语句子有歧义，请提供不同的Ls版本。但请记住：Ls句子不能有歧义。令E = 艾维斯唱歌；F = 芬顿调查；G = 乔治逃跑；H = 荷马逃跑。</p>
+<ol class="-mt-1 list-decimal space-y-2 pl-8" depth="0">
+<li class="whitespace-normal break-words" index="0">如果艾维斯唱歌，荷马会逃跑。</li>
+<li class="whitespace-normal break-words" index="1">如果艾维斯唱歌，荷马会逃跑。</li>
+<li class="whitespace-normal break-words" index="2">只有当艾维斯唱歌时，荷马会逃跑。</li>
+<li class="whitespace-normal break-words" index="3">如果乔治或荷马逃跑，芬顿会调查。</li>
+<li class="whitespace-normal break-words" index="4">如果乔治或荷马逃跑，芬顿会调查。</li>
+<li class="whitespace-normal break-words" index="5">如果艾维斯唱歌，那么如果乔治逃跑，芬顿会调查。</li>
+<li class="whitespace-normal break-words" index="6">如果乔治和荷马逃跑，艾维斯不会唱歌。</li>
+<li class="whitespace-normal break-words" index="7">如果艾维斯唱歌，荷马或乔治会逃跑。</li>
+<li class="whitespace-normal break-words" index="8">如果艾维斯不唱歌，芬顿不会调查。</li>
+<li class="whitespace-normal break-words" index="9">只有当艾维斯唱歌或乔治或荷马逃跑时，芬顿会调查。</li>
+</ol>
+<h2 class="font-600 text-xl font-bold" level="2">2.09 双条件句：≡</h2>
+<p class="whitespace-pre-wrap break-words">一旦你掌握了条件句，双条件句就是小菜一碟了。双条件句相当于双向条件句。英语中的双条件句与"当且仅当"这样的短语相关。考虑以下英语句子：</p>
+<p class="whitespace-pre-wrap break-words">一个溶液是酸性的，当且仅当它能使石蕊试纸变红。</p>
+<p class="whitespace-pre-wrap break-words">这个句子不仅包含了条件句
+如果一个溶液是酸性的，那么它会使石蕊试纸变红。
+还包含了相对应的条件句
+如果一个溶液使石蕊试纸变红，那么它是酸性的。</p>
+<p class="whitespace-pre-wrap break-words">双条件句在单个句子中表达相互对应的条件关系。这意味着双条件句可以通过连接一对互补的条件句来释义。</p>
+<p class="whitespace-pre-wrap break-words">考虑另一个英语例子：
+一个数是质数，当且仅当它只能被自身和1整除。</p>
+<p class="whitespace-pre-wrap break-words">这个句子可以用以下连接对来释义：
+如果一个数是质数，那么它只能被自身和1整除。
+以及
+如果一个数只能被自身和1整除，那么它是质数。</p>
+<p class="whitespace-pre-wrap break-words">普通的条件句并不具有这种双向性。例如，英语条件句
+如果是弗格森的面包，那么它是健康的。
+并不意味着
+如果是健康的，那么它就是弗格森的面包。</p>
+<p class="whitespace-pre-wrap break-words">第一个句子的真实性与第二个句子的虚假性是相容的。你可以完全一致地断言如果是弗格森的面包就是健康的，同时否认如果是健康的就是弗格森的面包：除了弗格森的面包之外，还有很多东西是健康的。</p>
+<p class="whitespace-pre-wrap break-words">这些英语双条件句的特点可以直接应用于Ls中的双条件句。首先，考虑下面的表格，其中展示了Ls中双条件句的定义。</p>
+<p class="whitespace-pre-wrap break-words">p  q   p ≡ q
+T(真) T(真)  T(真)
+T(真) F(假)  F(假)
+F(假) T(真)  F(假)
+F(假) F(假)  T(真)</p>
+<p class="whitespace-pre-wrap break-words">现在回想之前引入的双条件句：
+一个溶液是酸性的，当且仅当它使石蕊试纸变红。
+你可以在Ls中将其表示为一对互为条件的条件句：
+(A ⊃ R) ∧ (R ⊃ A)</p>
+<p class="whitespace-pre-wrap break-words">比较这个句子的真值条件与相应双条件句的真值条件。
+A  R   A ⊃ R   R ⊃ A   (A ⊃ R) ∧ (R ⊃ A)   A ≡ R
+T(真) T(真)  T(真)  T(真)  T(真)  T(真)
+T(真) F(假)  F(假)  T(真)  F(假)  F(假)
+F(假) T(真)  T(真)  F(假)  F(假)  F(假)
+F(假) F(假)  T(真)  T(真)  T(真)  T(真)</p>
+<p class="whitespace-pre-wrap break-words">双条件命题的真值条件与相互对应的条件命题的真值条件相匹配。这些命题尽管形式不同，但具有相同的真值条件；因此，就本书而言，它们的含义是相同的。</p>
+<p class="whitespace-pre-wrap break-words">如果你接受以下观点：(i)英语中的双条件句可以用Ls中互为条件的条件句很好地表达，(ii)用≡表示的Ls双条件句与互为条件的Ls条件句具有相同的真值条件，那么你就可以理所当然地接受(iii)Ls中的双条件句与英语中的双条件性相当。</p>
+<p class="whitespace-pre-wrap break-words">练习2.09
+将以下句子翻译成Ls。如果英语句子有歧义，请提供不同的Ls版本。但请记住：Ls句子不能有歧义。设E = 埃尔维斯唱歌；
+F = 芬顿调查；G = 乔治逃跑；H = 荷马逃跑。</p>
+<ol class="-mt-1 list-decimal space-y-2 pl-8" depth="0">
+<li class="whitespace-normal break-words" index="0">如果埃尔维斯唱歌，荷马就会逃跑。</li>
+<li class="whitespace-normal break-words" index="1">只有埃尔维斯唱歌，荷马才会逃跑。</li>
+<li class="whitespace-normal break-words" index="2">当且仅当埃尔维斯唱歌时，荷马会逃跑。</li>
+<li class="whitespace-normal break-words" index="3">当且仅当埃尔维斯唱歌或芬顿调查时，荷马会逃跑。</li>
+<li class="whitespace-normal break-words" index="4">当且仅当乔治或荷马逃跑时，埃尔维斯会唱歌。</li>
+<li class="whitespace-normal break-words" index="5">当且仅当乔治和荷马都逃跑时，埃尔维斯会唱歌。</li>
+<li class="whitespace-normal break-words" index="6">当且仅当乔治和荷马不逃跑或芬顿不调查时，埃尔维斯会唱歌。</li>
+<li class="whitespace-normal break-words" index="7">当且仅当埃尔维斯唱歌时，荷马或乔治会逃跑。</li>
+<li class="whitespace-normal break-words" index="8">如果芬顿不调查，那么当且仅当乔治不逃跑时，埃尔维斯不会唱歌。</li>
+<li class="whitespace-normal break-words" index="9">如果芬顿调查，那么当且仅当乔治不逃跑时，埃尔维斯会唱歌。</li>
+</ol>
 </div></div></div></body></html>
