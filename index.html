@@ -576,9 +576,7 @@ F F F</p>
 <p class="whitespace-pre-wrap break-words">建立了框架之后，你就可以开始计算目标句子的真值条件了。对于复杂句子来说，很容易出现粗心的错误。由于一处错误会影响到其他地方，所以明智的做法是谨慎而系统地推进。与其试图一次性确定复杂句子的真值条件，不如更安全地先计算其组成部分的真值条件，从内层到外层，从小到大，直到达到整个句子的层面。具体操作步骤如下：</p>
 <ol class="-mt-1 list-decimal space-y-2 pl-8" depth="0">
 <li class="whitespace-normal break-words" index="0">计算每个否定原子句的真值条件。在这里，目标句子包含两个否定原子句，¬A和¬C。</li>
-</ol>
-<ol class="-mt-1 list-decimal space-y-2 pl-8" depth="0">
-<li class="whitespace-normal break-words" index="0">计算括号内句子的真值条件，从最内层括号开始向外推进。在此，你需要先计算(¬C ∧ A)（其中∧表示"与"）的真值条件，然后是B ∨ (¬C ∧ A)（其中∨表示"或"）的真值条件。最终你会得到整个句子的真值条件。</li>
+<li class="whitespace-normal break-words" index="1">计算括号内句子的真值条件，从最内层括号开始向外推进。在此，你需要先计算(¬C ∧ A)（其中∧表示"与"）的真值条件，然后是B ∨ (¬C ∧ A)（其中∨表示"或"）的真值条件。最终你会得到整个句子的真值条件。</li>
 </ol>
 <p class="whitespace-pre-wrap break-words">下面是真值表，其中¬A和¬C的真值条件列在左边，后续句子的计算都基于这些结果：</p>
 <p class="whitespace-pre-wrap break-words">A B C　¬A　¬C　¬C ∧ A　B ∨ (¬C ∧ A)　¬A ⊃ (B ∨ (¬C ∧ A))
