@@ -712,4 +712,215 @@ A
 <p class="whitespace-pre-wrap break-words">虽然语言学家乔姆斯基和其他学者已经在研究方向上有了新的发展，但在将自然语言（如英语）翻译成Ls的讨论中，深层结构与表层结构的区别仍然具有重要价值。</p>
 <p class="whitespace-pre-wrap break-words">这些句子都具有歧义性；每个句子在不同场合都可以表达不同的含义。</p>
 <p class="whitespace-pre-wrap break-words">在开始构建Ls翻译时，深层结构与表层结构的区别就能发挥重要作用。由于我们的目标是设计出与特定英语句子具有相同真值条件的Ls句子，而句子的真值条件是由其深层结构决定的，因此在翻译时不应受到所要翻译句子表面特征的影响。这一原则将在考察常见英语结构的过程中得到充分且反复的论证。</p>
+<h2 class="font-600 text-xl font-bold" level="2">2.13 合取</h2>
+<p class="whitespace-pre-wrap break-words">在英语中识别合取并将其翻译成Ls，通常不会引起特殊问题。例如，在以下句子中，合取很容易识别：  
+Fenton调查，Iola拖延。  
+Fenton没有调查，Iola也没有拖延。  
+将它们翻译成Ls非常简单直接：  
+F ∧ I  
+¬F ∧ ¬I  </p>
+<p class="whitespace-pre-wrap break-words">在英语中，合取在英语中并不总是通过“and”来表示。以下每个句子都表达了一个合取关系。从Ls的角度来看，这些句子具有相同的真值条件。  
+Fenton调查，Iola拖延。  
+Fenton调查，但Iola却拖延。  
+Fenton调查，然而Iola拖延。  
+Fenton调查，尽管Iola拖延。  
+虽然Fenton调查，但Iola拖延。  </p>
+<p class="whitespace-pre-wrap break-words">这些句子中的每一个都可以翻译成Ls为：  
+F ∧ I  </p>
+<p class="whitespace-pre-wrap break-words">翻译此类句子的关键是认识到，尽管表面不同，但每个句子都表达了合取关系：每个句子在且仅在其两个连接部分——“Fenton调查”和“Iola拖延”——都为真时为真。  </p>
+<p class="whitespace-pre-wrap break-words">2.13 练习
+将以下句子翻译成Ls。设C = Callie逃脱；F = Fenton调查；G = Gertrude调查；I = Iola找到宝藏；J = Joe被绑架。</p>
+<ol class="-mt-1 list-decimal space-y-2 pl-8" depth="0">
+<li class="whitespace-normal break-words" index="0">Joe被绑架，然而Callie逃脱。  
+J ∧ C  </li>
+<li class="whitespace-normal break-words" index="1">虽然Joe被绑架，但Callie逃脱。  
+J ∧ C  </li>
+<li class="whitespace-normal break-words" index="2">Fenton调查，但Gertrude没有调查。  
+F ∧ ¬G  </li>
+<li class="whitespace-normal break-words" index="3">Fenton和Gertrude并不都调查。  
+¬(F ∧ G)  </li>
+<li class="whitespace-normal break-words" index="4">如果Joe被绑架，Fenton和Gertrude都会调查。  
+J → (F ∧ G)  </li>
+<li class="whitespace-normal break-words" index="5">Fenton调查当且仅当Joe被绑架，但Gertrude没有调查。  
+(F ↔ J) ∧ ¬G  </li>
+<li class="whitespace-normal break-words" index="6">如果Joe被绑架并且Callie逃脱，则Gertrude调查。  
+(J ∧ C) → G  </li>
+<li class="whitespace-normal break-words" index="7">如果Joe被绑架或Callie没有逃脱，则Gertrude调查。  
+(J ∨ ¬C) → G  </li>
+<li class="whitespace-normal break-words" index="8">要么Fenton调查且Callie逃脱，要么Joe被绑架且Gertrude调查。  
+(F ∧ C) ∨ (J ∧ G)  </li>
+<li class="whitespace-normal break-words" index="9">虽然Gertrude调查，但Fenton没有调查，而Callie逃脱。  
+G ∧ ¬F ∧ C  </li>
+</ol>
+<h2 class="font-600 text-xl font-bold" level="2">2.14 析取</h2>
+<p class="whitespace-pre-wrap break-words">在 Ls 中，析取并不比合取更复杂，只要你记住包含性析取和排他性析取之间的区别（见 § 2.6）。一旦掌握了这一区别，析取的其他方面就容易理解了。在英语中，析取通常（尽管并非总是）通过“要么……要么……”来表示。例如句子：  
+要么芬顿调查，要么艾欧拉拖延。  
+这个句子表达了一个析取，用 Ls 表示为：  
+F ∨ I  
+否定的析取稍微复杂一些。考虑以下句子：  
+既不芬顿调查，也不艾欧拉调查。  
+这个句子是一个很好的例子，可以用之前建议的方式来反思。假设你试图明确这个句子的真值条件。通过这样做，你可以看到，当芬顿不调查且艾欧拉不调查时，这个句子为真；而在其他情况下为假——如果芬顿调查，或者艾欧拉调查，或者两人都调查，则为假。这表明以下 Ls 翻译：  
+¬F ∧ ¬I  
+这个翻译将英语原句表示为一个合取而不是析取。然而，如果目标是找到一个具有正确真值条件的 Ls 句子，并且该句子确实满足这些真值条件，那么它就是一个完全合适的翻译。  
+实际上，这个句子也可以用一种保留其表面结构中析取特征的方式来翻译。可以将这个句子理解为：  
+“并非芬顿或艾欧拉调查。”  
+用 Ls 表示为：  
+¬(F ∨ I)  
+如果这是正确的，那么这两种 Ls 翻译应该具有相同的真值条件。你可以通过构造真值表轻松验证：  </p>
+<p class="whitespace-pre-wrap break-words">F I  ¬F  ¬I  ¬F ∧ ¬I  F ∨ I  ¬(F ∨ I)  
+T T  F  F  F  T  F  
+T F  F  T  F  T  F  
+F T  T  F  F  T  F  
+F F  T  T  T  F  T  </p>
+<p class="whitespace-pre-wrap break-words">这两个句子的真值条件相符——如第五列和第七列所示——因此它们具有相同的真值条件。因此，对于“既不……也不……”的句子，有两种逻辑等价的翻译方法。  
+请注意，以下两个 Ls 句子  
+¬(F ∨ I)  
+¬F ∨ ¬I  
+在意义上并不等价——从下面的真值表中可以清楚地看出：  </p>
+<p class="whitespace-pre-wrap break-words">F I  ¬F  ¬I  ¬F ∨ ¬I  F ∨ I  ¬(F ∨ I)  
+T T  F  F  F  T  F  
+T F  F  T  T  T  F  
+F T  T  F  T  T  F  
+F F  T  T  T  F  T  
+这里不存在等价性（类似于§ 2.6中提到的否定合取中等价性的缺失）并不让人感到意外。第一句话的意思是：“并非芬顿或艾欧拉中的任何一人会调查”；第二句话的意思是：“要么芬顿不调查，要么艾欧拉不调查”。第一句话否定了两人中任何一人会调查的可能性；第二句话则允许其中一人调查，但不允许两人都调查。</p>
+<p class="whitespace-pre-wrap break-words">练习题 2.14  
+将以下句子翻译成 Ls。设 C = 切特丢失地图；F = 弗兰克打电话回家；G = 格特鲁德找到宝藏；I = 艾欧拉找到宝藏；J = 乔带来一把铲子。  
+1. 艾欧拉或格特鲁德找到宝藏。  
+2. 艾欧拉和格特鲁德都没有找到宝藏。  
+3. 如果切特没有丢失地图且乔带来一把铲子，那么艾欧拉或格特鲁德找到宝藏。  
+4. 如果艾欧拉和格特鲁德都没有找到宝藏，弗兰克打电话回家。  
+5. 切特没丢地图，乔没带铲子，或弗兰克没打电话回家。  
+6. 并非艾欧拉和格特鲁德两人都找到宝藏。  
+7. 如果切特丢失地图或乔没带铲子，那么艾欧拉没有找到宝藏。  
+8. 切特没丢地图时，艾欧拉或格特鲁德找到宝藏。  
+9. 切特丢失地图，或者艾欧拉和格特鲁德都没有找到宝藏。  
+10. 如果切特没丢地图且乔带来一把铲子，那么艾欧拉或格特鲁德找到宝藏。  </p>
+<h2 class="font-600 text-xl font-bold" level="2">2.15 条件句与双条件句</h2>
+<p class="whitespace-pre-wrap break-words">在介绍条件句时，我提请您注意英语中条件句的表面结构与 Ls 条件句之间并非完全契合。英语句子中出现“if...then...”的条件句短语，并不是可靠的标志表明该句子表达的是一个条件句。这一特性使条件句的翻译尤为困难。此外，条件句结构中句子的顺序会产生不同的影响，而这种影响在合取或析取句中并不明显。很容易对某个条件句的前件和后件的划分感到困惑。在这里以及其他地方，您需要掌握透过目标句表面结构看清其深层结构的诀窍。  </p>
+<p class="whitespace-pre-wrap break-words">在第 2.08 节中，我们了解到英语条件句通常以颠倒顺序出现：先是后件，然后是前件。例如，比如说：  
+如果你把它放进烤箱，面包会发酵。  
+你也可以说：  
+面包会发酵，如果你把它放进烤箱。  
+这两句话都可以翻译为：  
+B ⊃ R  </p>
+<p class="whitespace-pre-wrap break-words">在翻译此类句子时，关键是找到 if 子句，并将其视为前件。这并不意味着每次出现“if”都表示条件句的前件。“only if”和普通的“if”在句子中所起的逻辑意义截然不同。例如：  
+面包只有在你把它放进烤箱时才会发酵。  
+这是一个简单的“...only if...”条件句，翻译为：  
+R ⊃ B  </p>
+<p class="whitespace-pre-wrap break-words">请记住：当您感到困惑时，您可以随时回想原句的真值条件。在当前情况下，这可能包括询问“only-if”句子在 R 为真而 O 为假时是否显然为假。如果是这样，它表达的是一个条件句。  </p>
+<p class="whitespace-pre-wrap break-words">尽管条件句通常与“...only if...”和“if...then...”短语相关联，但这些短语最多只能表明可能存在条件句，而不能保证一定存在条件句。请看以下句子：  
+如果你洗了碗，那么我会给你一美元。  
+这句话包含一个条件部分——反映在如果你洗了碗，你会期望得到一美元。然而，你可能并不期望在你没有洗碗时也能得到一美元。如果你将这句话视为一个简单的条件句，你会认为它在以下情况下为真：  </p>
+<p class="whitespace-pre-wrap break-words">W D  W ⊃ D  
+T T  T  
+T F  F  
+F T  T  
+F F  T  </p>
+<p class="whitespace-pre-wrap break-words">这个句子在真值表的第三行被视为真，即使在你没有洗碗的情况下我也给你一美元。你可能希望如此，但这个句子本身并不能让你对此抱有乐观的理由。这表明，尽管英语原句看起来像是一个条件句，但实际上可能表达的是一个双条件：  
+只有当你洗碗，我才会给你一美元。  
+从这个双条件的Ls版本真值表可以看出，你可以期待在洗碗时得到一美元，但在其他情况下无法得到：  </p>
+<p class="whitespace-pre-wrap break-words">W D  W ≡ D  
+T T  T  
+T F  F  
+F T  F  
+F F  T  </p>
+<p class="whitespace-pre-wrap break-words">在英语中表面上是条件句的句子有时会用来表达双条件句。这是导致 Ls 中的条件句与英语中的条件句显得有很大差异的原因之一。Ls 条件句并不总是能够翻译含有“……只有在……时”或“如果……那么……”结构的英语句子，这源于英语的一个特点：条件句的表面结构与深层结构并不总是可靠地对应。</p>
+<p class="whitespace-pre-wrap break-words">了解了这些细微差别后，你会感到宽慰，因为这些问题实际上影响不大。Ls 的特性使我们可以允许将不明显的英语双条件句误译为条件句。原因将在下一章中变得清晰。目前，请记住，双条件句可以被视为包含条件句。双条件句被引入时是作为成对的条件句来表达的。将双条件句误译为 Ls 的条件句并不会完全失去其本意。</p>
+<p class="whitespace-pre-wrap break-words">这并不意味着条件句和双条件句之间的差异可以被简单忽略。这里有一个安全的策略：仅在句子明确是双条件句时，才将英语句子翻译为 Ls 中的双条件句，仅在它们包含例如“……如果且仅在……”或“……唯有在……时……”这样的短语时。你可以将“如果你洗碗，那么我会给你一美元。”翻译为 Ls 中的普通条件句：  
+W ⊃ D  
+而双条件句则仅用于那些明确的句子：  
+“你会赢，唯有在你努力比赛时。”  
+“一个集合是空的，唯有在它没有成员时。”  
+这些句子可以翻译为 Ls 中的  
+W ≡ P  
+E ≡ ¬M  
+在 Ls 中将双条件句结构保留给明确的双条件句，反映了久经考验的逻辑传统。考虑到 Ls 这样的形式语言的常见用途，这完全合乎逻辑。如果有需要，你总是可以使你的翻译更加精确。</p>
+<p class="whitespace-pre-wrap break-words">练习 2.15  
+将以下句子翻译成 Ls。设 C = 卡莉发现小偷；  
+F = 芬顿会进行逮捕；G = 格特鲁德睡着了；J = 乔撞毁跑车。  
+1. 如果卡莉发现小偷，芬顿会进行逮捕。  
+2. 如果格特鲁德没有睡着，乔就不会撞毁跑车。  
+3. 如果格特鲁德没有睡着且乔没有撞毁跑车，那么芬顿会进行逮捕。  
+4. 乔只有在格特鲁德睡着时才会撞毁跑车。  
+5. 如果乔撞毁跑车，格特鲁德会睡着。  
+6. 只有格特鲁德睡着时，乔才会撞毁跑车。  
+7. 乔撞毁跑车，当且仅当格特鲁德睡着。  
+8. 芬顿会进行逮捕，当且仅当卡莉发现小偷且乔没有撞毁跑车。  
+9. 如果乔撞毁跑车或卡莉没有发现小偷，那么芬顿不会进行逮捕。  
+10. 如果乔撞毁跑车，那么芬顿会进行逮捕，当且仅当格特鲁德没有睡着。  </p>
+<h2 class="font-600 text-xl font-bold" level="2">2.16 棘手的英语句式</h2>
+<p class="whitespace-pre-wrap break-words">一些常见的英语短语表达在用 Ls 表达时可能会带来特殊问题。正如往常一样，成功的翻译取决于你是否能够明确句子的真值条件。如果你没有花时间仔细思考句子的含义，就可能出错。  
+请看以下句子：  
+除非你锻炼，否则你会发胖。  
+这个句子可以理解为：  
+如果你不锻炼，那么你会发胖。  
+这个句子可以翻译成 Ls 为：  
+¬E ⊃ W  
+这个翻译展示了“除非”句式的一般特性。通常，这类句式遵循以下模式：  
+p 除非 q  
+¬q ⊃ p  
+记住这个模式是有用的。你可能会倾向于错误地将这些句子表示为：  
+如果你锻炼，那么你不会发胖。  
+用 Ls 表示为：  
+E ⊃ ¬W  
+尽管有人可能会认为原句暗示了这个句子，但它与原句有很大的不同。最简单的方式是通过一个类似的例子来说明这一点：  
+除非你跑步，否则你会被抓住。  
+这个句子可以理解为：  
+如果你不跑步，那么你会被抓住。  
+按照上述模式，它可以翻译成 Ls 为：  
+¬R ⊃ C  
+然而，这个句子并未表明：  
+如果你被抓住，那么你没有跑步：C ⊃ ¬R  
+原句并未排除即使你跑步也可能被抓住的可能性，比如，你可能跑进陷阱，被追上，或者摔倒。通过真值表对比可以看出这些句子具有不同的真值条件：  </p>
+<p class="whitespace-pre-wrap break-words">R C  ¬R  ¬R ⊃ C  C ⊃ ¬R  
+T T  F  T  F  
+T F  F  T  T  
+F T  T  T  T  
+F F  T  F  T  </p>
+<p class="whitespace-pre-wrap break-words">该真值表揭示了“除非”结构的一些重要特性。请看第四列，它展示了原句 ¬R ⊃ C 的正确翻译所对应的真值条件。将该列的真值条件与下方析取式 C ∨ R 的真值条件进行比较如下：</p>
+<p class="whitespace-pre-wrap break-words">R C  ¬R  ¬R ⊃ C  C ∨ R  
+T T  F  T  T  
+T F  F  T  T  
+F T  T  T  T  
+F F  T  F  F  </p>
+<p class="whitespace-pre-wrap break-words">列的真值条件相符，因此 ¬R ⊃ C 和 C ∨ R 的真值条件是相同的。那么，这意味着什么呢？现在，您可以简化之前关于“除非”结构翻译的原则：</p>
+<p class="whitespace-pre-wrap break-words">p 除非 q  
+p ∨ q  </p>
+<p class="whitespace-pre-wrap break-words">要应用这一原则，首先找到“除非”子句，并将句子改写为可以称为准形式的逻辑符号（quasi-Ls）。以句子“除非搅拌，否则酱汁会变质”为例，令 S 表示“酱汁被搅拌”，令 B 表示“酱汁会变质”。该句子的准形式逻辑符号为：</p>
+<p class="whitespace-pre-wrap break-words">B 除非 S  </p>
+<p class="whitespace-pre-wrap break-words">根据这一原则，变为：</p>
+<p class="whitespace-pre-wrap break-words">B ∨ S  </p>
+<p class="whitespace-pre-wrap break-words">中间步骤的准形式逻辑符号在翻译其他令人困惑的句子时通常很有用。</p>
+<p class="whitespace-pre-wrap break-words">另一种类型的问题出现在以下句子中：</p>
+<p class="whitespace-pre-wrap break-words">如果芬顿调查，那么即使卡莉没有调查，荷马仍会被抓住。</p>
+<p class="whitespace-pre-wrap break-words">这里，一个条件句：</p>
+<p class="whitespace-pre-wrap break-words">如果芬顿调查，那么荷马会被抓住。</p>
+<p class="whitespace-pre-wrap break-words">包含了一个嵌入句：</p>
+<p class="whitespace-pre-wrap break-words">卡莉没有调查。</p>
+<p class="whitespace-pre-wrap break-words">这个条件句似乎很清楚，但这个嵌入句该如何处理呢？首先注意到，卡莉没有调查并不是条件句的组成部分，尽管它出现在条件句的表述中。假设您将句子翻译为：</p>
+<p class="whitespace-pre-wrap break-words">(F ∧ ¬C) ⊃ H  </p>
+<p class="whitespace-pre-wrap break-words">这种翻译会使荷马被抓住的条件变成同时依赖于芬顿的调查和卡莉没有调查。然而，在原始英文中，荷马被抓住仅仅取决于芬顿的调查：</p>
+<p class="whitespace-pre-wrap break-words">F ⊃ H  </p>
+<p class="whitespace-pre-wrap break-words">卡莉没有调查是额外的信息，但并不是条件句的一部分。</p>
+<p class="whitespace-pre-wrap break-words">您可以通过将 ¬C 与原始条件句结合起来翻译整个句子：</p>
+<p class="whitespace-pre-wrap break-words">(F ⊃ H) ∧ ¬C  </p>
+<p class="whitespace-pre-wrap break-words">这种翻译清楚地表明，荷马被抓住并非取决于卡莉没有调查。一般来说，当你遇到“虽然”、“即使”以及“尽管”这样的结构时，可以使用这种方法。这类结构通常表示插入了一条信息，这条信息最好作为单独的合取项来处理。例如，句子  
+如果弗兰克或乔被绑架，那么尽管艾欧拉成功逃脱，切特依然不会感到高兴。  
+可以翻译为  
+((F ∨ J) ⊃ ¬C) ∧ I  
+尽管这样的翻译有时可能会显得有些别扭，但它们体现了英文对应句的逻辑结构，这是在Ls中所能达到的最佳效果。  </p>
+<p class="whitespace-pre-wrap break-words">练习 2.16
+将以下句子翻译成 Ls。设 C = 切特起锚；F = 弗兰克驾驶“侦探号”；G = 格特鲁德获救；I = 艾欧拉发信号；J = 乔伪装。</p>
+<ol class="-mt-1 list-decimal space-y-2 pl-8" depth="0">
+<li class="whitespace-normal break-words" index="0">如果乔伪装，那么格特鲁德获救。</li>
+<li class="whitespace-normal break-words" index="1">除非格特鲁德获救，艾欧拉会发信号。</li>
+<li class="whitespace-normal break-words" index="2">格特鲁德不会获救，除非艾欧拉发信号。</li>
+<li class="whitespace-normal break-words" index="3">除非切特起锚，否则弗兰克不会驾驶“侦探号”。</li>
+<li class="whitespace-normal break-words" index="4">乔会伪装，除非艾欧拉发信号或格特鲁德获救。</li>
+<li class="whitespace-normal break-words" index="5">如果艾欧拉发信号，那么乔会伪装，除非格特鲁德获救。</li>
+<li class="whitespace-normal break-words" index="6">尽管艾欧拉没有发信号，乔伪装。</li>
+<li class="whitespace-normal break-words" index="7">艾欧拉发信号，但格特鲁德没有获救，即使乔伪装了。</li>
+<li class="whitespace-normal break-words" index="8">如果弗兰克驾驶“侦探号”，即使艾欧拉没有发信号，格特鲁德也会获救。</li>
+<li class="whitespace-normal break-words" index="9">如果切特起锚，尽管乔伪装，弗兰克还是会驾驶“侦探号”。</li>
+</ol>
 </div></div></div></body></html>
