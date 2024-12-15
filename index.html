@@ -1334,4 +1334,378 @@ p ⊃ q
 p  
 q  </p>
 <p class="whitespace-pre-wrap break-words">一旦你学会区分这些模式，你就可以着手进行Ls中的推导了。推导的构建更多的是一种感知性的任务，而不是一种智力任务，类似于观鸟或解决图形谜题（参见第1章）。起初隐藏的模式，通过练习，可以变得显而易见。</p>
+<h2 class="font-600 text-xl font-bold" level="2">3.04 推导规则：MP, MT</h2>
+<p class="whitespace-pre-wrap break-words">之前，以下序列被证明是有效的：  
+H ⊃ W  
+H  
+W  
+将这一模式推广后，得到了以下形式的通用推导序列：  
+p ⊃ q  
+p  
+q  
+形式原则表明，每个具有这种形式的推导序列都是有效的。这种推理模式既熟悉又自然，因此值得被赋予规则的地位。这个规则的传统拉丁名称是 modus ponendo ponens（意为“肯定前件的方式”），简称为 modus ponens，或 MP。  
+(MP)  p ⊃ q, p ⊢ q  
+这种 MP 的表述表明，p ⊃ q 与 p 一起，可以演绎出 q。也就是说，MP 允许你从 p ⊃ q 和 p 推导出 q。变量 p 和 q 被理解为可以代表任何 Ls 句子。符号 ⊢ 表示其右侧的句子可以从其左侧的句子推导出来：如果你拥有左侧的句子，就有权断言右侧的句子。此规则与其他规则一起用于从前提推导结论。  
+推导的操作方法最好通过示例来学习。假设你试图证明前面提到的序列的结论可以从其前提中推导出来：  
+¬(A ∨ (C ⊃ D)) ⊃ (D ∧ ¬C)  
+¬(A ∨ (C ⊃ D))  
+D ∧ ¬C  
+肯定前件规则（modus ponens）使你能够从两个前提（即水平线上的句子）推导出结论。为了简化过程，推导中的每一行都被赋予一个编号。当你需要引用推导中的某个句子时，可以通过该句子所在行的编号来实现。  
+行号有助于推导过程的清晰性。清晰性还通过其他工具得到了增强。例如，句子左侧的加号表示该句子是一个前提。一个问号被放置在需要推导的结论左侧，表示该句子被认为是从前提中演绎得出的。  
+在构建推导的过程中，你经常需要添加通过规则从其他句子推导出的句子，以便最终得出结论。对于以这种方式添加的每个句子，你需要在其右侧标明 (i) 支持其推导的规则名称，以及 (ii) 应用该规则的句子所在的行号。综合以上内容，可以为前述推导序列构建如下推导过程：  
+1. + ¬(A ∨ (C ⊃ D)) ⊃ (D ∧ ¬C)  
+2. + ¬(A ∨ (C ⊃ D))  
+3. ? (D ∧ ¬C)  
+4.   D ∧ ¬C      1, 2 MP  </p>
+<p class="whitespace-pre-wrap break-words">第1行和第2行的句子是前提，如其左侧的“+”所示。第3行包含需要推导的结论。结论用“?”标记，不会在推导过程中被使用。它被插入在前提之后，以指示推导的目标。第4行的句子是推导出来的，因此其引入必须由规则名称（在此为MP）支持，同时还需注明应用该规则的句子所在的行号。第4行的符号表明，(D ∧ ¬C) 是由第1行和第2行的句子通过MP规则推导出来的。</p>
+<p class="whitespace-pre-wrap break-words">推导的过程将分两个阶段介绍。规则MP是推论规则的一个例子。推论规则反映了我们在日常思维中下意识使用的推理原则。而转换规则则有所不同，这将在稍后（§§ 3.11–3.15）讨论。</p>
+<p class="whitespace-pre-wrap break-words">规则不是用Ls语言表达的，而是用元语言表达的。规则规定在何种情况下可以从一个句子推导出另一个句子。因此，规则是用变量（小写的p和q）来表示的。如上述推导所示，这些变量并不代表原子命题，而是代表任何Ls句子。</p>
+<p class="whitespace-pre-wrap break-words">推理与蕴意  
+蕴意是一种句子之间的关系，而推理是一种思维活动。“如果A，那么B”，再加上“A”，在逻辑上意味着“B”。这意味着，如果“如果A，那么B”和“A”都为真，那么“B”也必须为真：不存在一个情境，在其中前两个句子为真而第三个句子为假。  
+接受上述两个句子并不必然在理性上要求你推导或接受第三个句子。理性最多要求你接受“B”，或者拒绝“如果A，那么B”或“A”中的任意一个。在科学和日常生活中，当我们得知某个假设蕴意了错误的内容时，通常会拒绝该假设。  
+普通句子，无论单独存在还是组合在一起，都可以蕴意无数其他句子。我们只有在有理由时才会费力去推导这些其他句子。  </p>
+<p class="whitespace-pre-wrap break-words">整句规则  
+与其他所有推理规则一样，演绎规则“肯定前件”（modus ponens, MP）仅适用于推导中的整句。以下对MP的应用违反了这一限制：  
+1. + B ∨ (S ⊃ W)  
+2. + S  
+3.   W   1, 2 MP（无效，违反限制）  
+换句话说，MP不能应用于作为其他句子组成部分的句子。原因显而易见：上面第1行中的条件句是一个析取句的一部分。假如我告诉你：  
+要么天空是蓝的，要么如果我以5美元的价格卖给你一张彩票，你将中奖。  
+即使你有充分理由相信我的析取句是真实的，你也不会愚蠢地推断出，如果我卖给你一张彩票，你就会中奖。结论是，在形式语言（Ls）中，推理规则仅适用于完整句子，而不适用于句子的一部分。  </p>
+<p class="whitespace-pre-wrap break-words">一种类似于“肯定式推理规则”（modus ponens, MP）的规则是“否定后件推理规则”（modus tollendo tollens, MT），简称“否定式推理”（MT）。该规则允许你在给定（i）一个条件句和（ii）其后件的否定时，推导出该条件句前件的否定形式。  
+(MT)  p ⊃ q, ¬q ⊦ ¬p  
+请看一个对应的英文推理过程：  
+如果苏格拉底是智慧的，那么他是幸福的。  
+苏格拉底并不幸福。  
+苏格拉底并不智慧。  
+这种推理模式是清晰且熟悉的。请看其在形式语言（Ls）中的应用：  
+W ⊃ H  
+¬H  
+¬W  
+你可以构建该推理过程的推导，为每个前提用“+”标记，用“?”表示需要推导的结论，并通过MT规则证明结论确实可以从前提中推导出来：  
+1. + W ⊃ H  
+2. + ¬H  
+3. ? ¬W  
+4.  ¬W      1, 2 MT  </p>
+<p class="whitespace-pre-wrap break-words">推导过程并非总是如此直截了当。请看以下英文推理过程：  
+如果不是假期，那么高速公路会堵车。  
+高速公路并没有堵车。  
+现在是假期。  
+该推理过程包括一个条件句“如果不是假期，那么高速公路会堵车”，以及该条件句后件的否定“高速公路并没有堵车”。依据否定后件推理规则（MT），结论“现在是假期”是该条件句前件的否定形式。为什么不是“不是‘不是假期’”？双重否定在逻辑上等价于未否定的句子。“不是‘不是假期’”在逻辑上等价于“现在是假期”，如下逻辑真值表所示：  </p>
+<p class="whitespace-pre-wrap break-words">H  ¬H  ¬¬H  
+T  F  T  
+F  T  F  </p>
+<p class="whitespace-pre-wrap break-words">¬¬H的逻辑真值条件与H的逻辑真值条件完全相同。  </p>
+<h2 class="font-600 text-xl font-bold" level="2">3.05 句子正负极性</h2>
+<p class="whitespace-pre-wrap break-words">如何在 Ls 中表达否定的这一特性？一种方法是引入一条规则——双重否定（DN，即从 ¬¬p 推导出 p 的规则），允许从 ¬¬p 推导出 p。以下推导反映了此规则的应用，以及 MT 对上述序列的 Ls 版本的应用。  
+1. + ¬H ⊃ J  
+2. + ¬J  
+3. ? H  
+4.  ¬¬H   1, 2 MT  
+5.  H     4 DN  </p>
+<p class="whitespace-pre-wrap break-words">虽然可以将 DN 包括在 Ls 的推导规则列表中，但还有一种更为简便的方式，可以简化许多推导过程。  
+每个句子都有一个极性，可以是正极性或负极性。被否定的句子具有负极性。未被否定符号前置的句子具有正极性。以下这些句子是正极性的：  
+P  
+P ∨ Q  
+P ⊃ (Q ∨ ¬R)  </p>
+<p class="whitespace-pre-wrap break-words">以下这些句子的极性是负的：  
+¬P  
+¬(P ∨ Q)  
+¬(P ⊃ (Q ∨ ¬R))  </p>
+<p class="whitespace-pre-wrap break-words">在 Ls 中，规则中出现的否定符号（¬）应被理解为所附表达式的相对极性的标志。当你有一个条件句以及一个与其后件相同但极性相反的句子时，可以应用 MT。从中可以推导出其前件的否定——即一个与前件相同但极性相反的句子。将被否定句子的极性反转后，会得到一个未被否定的句子。这意味着在上述推导中，通过 MT 可直接从第 1 行和第 2 行推导出 H。  
+1. + ¬H ⊃ J  
+2. + ¬J  
+3. ? H  
+4.  H     1, 2 MT  </p>
+<p class="whitespace-pre-wrap break-words">同样的原理也适用于被否定的后件，以下推导为例：  
+1. + A ⊃ ¬B  
+2. + B  
+3. ? ¬A  
+4.  ¬A   1, 2 MT  </p>
+<p class="whitespace-pre-wrap break-words">MT 允许在已知条件句后件的否定时，推导出其前件的否定。条件句 A ⊃ ¬B 的后件为 ¬B。将 ¬B 的极性反转后得到 B。  </p>
+<h2 class="font-600 text-xl font-bold" level="2">3.06 假言三段论：HS</h2>
+<p class="whitespace-pre-wrap break-words">MP 和 MT 反映了日常推理中使用条件句的形式。第三条规则，假言三段论（HS），涉及条件句，用于如下所示的推理：  
+如果苏格拉底有智慧，那么他是幸福的。  
+如果苏格拉底是幸福的，那么他是满足的。  
+如果苏格拉底有智慧，那么他是满足的。  
+这里的推理形式是：  
+(HS)  p ⊃ q, q ⊃ r ⊦ p ⊃ r  
+这样的序列由一对条件句组成，其中一个条件句的后件与另一个条件句的前件相匹配，从中可以提取出第三个条件句。条件句是具有传递性的：如果 r 以 q 为条件，而 q 以 p 为条件，那么 r 也以 p 为条件。  
+上述序列的推导如下所示：  
+1. + W ⊃ H  
+2. + H ⊃ S  
+3. ? W ⊃ S  
+4.  W ⊃ S    1, 2 HS  
+推理规则（包括 HS）无论条件句是简单还是复杂，也无论它们在推导中的出现顺序，都适用。以下推导说明了这两种可能性：  
+1. + ¬(A ∨ ¬B) ⊃ (C ⊃ D)  
+2. + (R ∧ S) ⊃ ¬(A ∨ ¬B)  
+3. ? (R ∧ S) ⊃ (C ⊃ D)  
+4.  (R ∧ S) ⊃ (C ⊃ D)    1, 2 HS  
+在这里，与其他地方一样，诀窍在于培养在令人眼花缭乱的符号阵列中识别模式的能力。  </p>
+<p class="whitespace-pre-wrap break-words">推导启发法  
+启发法是一种经验法则，是一种可能对解决问题有帮助但不能保证解决问题的原则。启发法与算法（保证解决问题的程序）有所不同。  
+真值表是一种算法，用于评估 Ls 的有效性或无效性。通过构建真值表，你可以“机械地”确定一个序列是有效还是无效的。  
+当你试图通过推导来证明有效性时，情况则有所不同。没有一种机械化的技术可以将推理规则应用于前提，从而保证每个有效序列的结论都能被推导出来。你未能推导出结论可能意味着该序列无效，也可能意味着尽管它是有效的，但你尚未发现能够证明其有效性的规则应用序列。  
+这并不意味着推导的构建是盲目运气的结果。一旦掌握了诀窍，你通常可以看出推导的可能方向。掌握诀窍涉及模式识别技能的习得：你学会在陌生的符号阵列中“看到”熟悉的模式——从字面意义上来说。  
+一种被普遍认为有助于推导构建的经验法则或启发法是：  
+关注结论，并“逆向推导”到前提。  
+通过这样做，你可以缩小规则应用的选择范围。  </p>
+<p class="whitespace-pre-wrap break-words">习题 3.06  
+使用 MP（肯定前件）、MT（否定后件）和 HS（假设三段论）对以下逻辑序列进行推导，并将 MT 中 ¬ 的出现理解为指示反转 ¬ 右侧表达式的真假值。  
+1. 已知：P ⊃ (Q ∨ R)  
+   已知：¬(Q ∨ R)  
+   求：¬P  
+2. 已知：¬P ⊃ ¬Q  
+   已知：¬P  
+   求：¬Q  
+3. 已知：¬P ⊃ Q  
+   已知：¬Q  
+   求：P  
+4. 已知：P ⊃ Q  
+   已知：¬S  
+   已知：¬(Q ⊃ R) ⊃ S  
+   求：P ⊃ R  
+5. 已知：P ⊃ ¬Q  
+   已知：Q  
+   已知：¬S ⊃ P  
+   求：S  
+6. 已知：P ⊃ (Q ⊃ R)  
+   已知：P  
+   已知：Q  
+   求：R  
+7. 已知：¬(P ⊃ Q) ⊃ R  
+   已知：¬R  
+   已知：P  
+   求：Q  
+8. 已知：P ⊃ Q  
+   已知：Q ⊃ R  
+   已知：P  
+   求：R  
+9. 已知：P ⊃ ¬Q  
+   已知：Q  
+   已知：R ⊃ P  
+   求：¬R  
+10. 已知：¬(P ⊃ R) ⊃ ¬Q  
+    已知：P  
+    已知：Q  
+    求：R  
+11. 已知：¬P ⊃ ¬Q  
+    已知：Q  
+    已知：P ⊃ (S ∧ T)  
+    求：S ∧ T  
+12. 已知：P ⊃ Q  
+    已知：Q ⊃ ¬R  
+    已知：R  
+    求：¬P  
+13. 已知：¬(P ⊃ Q) ⊃ R  
+    已知：R ⊃ S  
+    已知：¬S  
+    求：P ⊃ Q  
+14. 已知：¬(P ∧ ¬S) ⊃ (Q ∨ R)  
+    已知：(Q ∨ R) ⊃ ¬T  
+    已知：T  
+    求：P ∧ ¬S  
+15. 已知：(P ⊃ S) ⊃ T  
+    已知：T ⊃ ¬(Q ∨ ¬R)  
+    已知：((P ⊃ S) ⊃ ¬(Q ∨ ¬R)) ⊃ U  
+    求：U  </p>
+<h2 class="font-600 text-xl font-bold" level="2">3.07 合取规则：∧I, ∧E</h2>
+<p class="whitespace-pre-wrap break-words">规则 MP、MT 和 HS 适用于条件式。现在我们来看两条与合取相关的规则。第一条规则是合取引入（∧I），它允许将两个句子合成为一个合取句。  
+(∧I)  p, q ⊦ p ∧ q  
+该规则体现了以下推理序列的逻辑模式：  
+苏格拉底是智慧的。  
+苏格拉底是快乐的。  
+苏格拉底既智慧又快乐。  
+将该序列翻译成 Ls，包含了对 ∧I 的应用。  
+1. W  
+2. H  
+3. W ∧ H   1, 2 ∧I  </p>
+<p class="whitespace-pre-wrap break-words">第二条规则是合取消解（∧E），它的方向与之相反。从  
+苏格拉底既智慧又快乐。  
+你可以推导出以下任一或两个命题：  
+苏格拉底是智慧的。  
+以及  
+苏格拉底是快乐的。  
+该规则分为两部分，明确了这一推导选项。  
+(∧E)  p ∧ q ⊦ p  
+    p ∧ q ⊦ q  
+将 ∧E 应用于上述英文序列的 Ls 版本，可以单独“分解”每个合取项。  
+1. + W ∧ H  
+2.  W   1 ∧E  
+3.  H   1 ∧E  </p>
+<p class="whitespace-pre-wrap break-words">与一般推理规则一样，合取规则仅适用于推导中的整行。从  
+¬(W ∧ H)  
+你无法推导出 W 或 H。这种推理忽略了否定符号，因此显然无效，正如以下英文序列所示：  
+事实并非苏格拉底既智慧又快乐。  
+苏格拉底是智慧的。  
+你可以通过构造真值表来证明该 Ls 序列的无效性。这将显示至少有一行中，前提 ¬(W ∧ H) 为真且 W 为假，或 ¬(W ∧ H) 为真且 H 为假。  </p>
+<p class="whitespace-pre-wrap break-words">练习 3.07：  
+使用 MP、MT、HS、∧I 和 ∧E 为以下 Ls 逻辑序列构建推理过程。  
+（∧ 表示“且”，⊃ 表示“蕴含”，¬ 表示“非”）  </p>
+<ol class="-mt-1 list-decimal space-y-2 pl-8" depth="0">
+<li class="whitespace-normal break-words" index="0">＋ (P ⊃ Q) ∧ ¬R  
+   ＋ P  
+   ？ Q  </li>
+<li class="whitespace-normal break-words" index="1">＋ P ∧ (¬Q ∧ ¬R)  
+   ？ ¬R  </li>
+<li class="whitespace-normal break-words" index="2">＋ ¬(P ∧ ¬Q) ⊃ R  
+   ＋ ¬R  
+   ？ ¬Q  </li>
+<li class="whitespace-normal break-words" index="3">＋ ¬P  
+   ＋ Q  
+   ＋ (¬P ∧ Q) ⊃ R  
+   ？ R  </li>
+<li class="whitespace-normal break-words" index="4">＋ P ∧ Q  
+   ？ Q ∧ P  </li>
+<li class="whitespace-normal break-words" index="5">＋ P ⊃ (Q ∧ ¬R)  
+   ＋ P  
+   ？ ¬R  </li>
+<li class="whitespace-normal break-words" index="6">＋ P ⊃ (Q ∧ ¬R)  
+   ＋ P  
+   ？ ¬R ∧ Q  </li>
+<li class="whitespace-normal break-words" index="7">＋ (P ∧ Q) ⊃ (R ∧ S)  
+   ＋ Q  
+   ＋ P  
+   ？ R  </li>
+<li class="whitespace-normal break-words" index="8">＋ ¬(P ∧ Q) ⊃ (P ∨ Q)  
+   ＋ ¬(P ∨ Q)  
+   ？ Q  </li>
+<li class="whitespace-normal break-words" index="9">＋ S ∧ ((P ≡ Q) ⊃ R)  
+    ＋ P ≡ Q  
+    ？ R  </li>
+<li class="whitespace-normal break-words" index="10">＋ P ⊃ Q  
+    ＋ R ⊃ S  
+    ＋ P ∧ R  
+    ？ Q ∧ S  </li>
+<li class="whitespace-normal break-words" index="11">＋ P ⊃ Q  
+    ＋ Q ⊃ (R ∧ S)  
+    ＋ P ∧ T  
+    ？ S ∧ T  </li>
+<li class="whitespace-normal break-words" index="12">＋ (P ∧ Q) ⊃ ¬(S ∧ T)  
+    ＋ ¬S ⊃ ¬T  
+    ＋ T  
+    ？ ¬(P ∧ Q)  </li>
+<li class="whitespace-normal break-words" index="13">＋ P ⊃ (Q ⊃ ¬R)  
+    ＋ P ∧ Q  
+    ？ ¬R  </li>
+<li class="whitespace-normal break-words" index="14">＋ S ∧ ¬Q  
+    ＋ ¬(R ∧ (S ⊃ T)) ⊃ Q  
+    ？ T  </li>
+</ol>
+<h2 class="font-600 text-xl font-bold" level="2">3.08 析取规则：∨I, ∨E</h2>
+<p class="whitespace-pre-wrap break-words">析取规则与影响合取符号 ∧ 的规则不同，这种差异反映了析取与合取在真值功能上的不同。析取引入规则（∨I）允许你将任意句子作为析取项附加到给定句子中。添加的句子不需要在推导中提前出现，也不需要从其他行中引入。这个概念很简单。假设你知道苏格拉底很快乐。  
+你可以推导出：  
+苏格拉底很快乐，或者很聪明。  
+或者：  
+苏格拉底很快乐，或者鲸鱼是鱼。  
+这些析取句并未为推导出的句子增加任何信息。例如，它们并未表明苏格拉底除了快乐之外还很聪明，或者鲸鱼是鱼。“苏格拉底很聪明”和“鲸鱼是鱼”仅作为析取句中的组成部分存在。用符号 Ls 表达的规则形式为：  
+(∨I)  p ⊢ p ∨ q  
+在实际操作中，当你需要在推导中添加尚未出现的内容时，∨I 最常被使用。如果你在查看序列时发现结论中有一个原子句，而前提中没有，那么很可能你需要使用 ∨I 来构建推导。  
+规则 ∨I 允许将一个原子句添加到另一个原子句中：  
+1. + H  
+2.  H ∨ W      1 ∨I  
+也允许将非原子、分子句添加进去：  
+1. + H  
+2.  H ∨ ¬(W ⊃ ¬P)      1 ∨I  
+因此，该规则允许将任意句子添加到已存在的句子中，前提是你将其应用限制在整行上，如下列序列所示：  
+1. + H ∨ W  
+2.  (H ∨ W) ∨ ¬(W ⊃ ¬P)      1 ∨I  
+当 ¬(W ⊃ ¬P) 添加到 H ∨ W 时，它是被添加到整个句子中的，而不是仅添加到 W 中。以下推导是不正确的：  
+1. + H ∨ W  
+2.  H ∨ (W ∨ P)      1 ∨I（错误）  </p>
+<p class="whitespace-pre-wrap break-words">析取引入的对应规则——析取消解（∨E），与合取规则（∧E）不同，它的应用需要两个句子。给定一个析取式的前提，以及其中一个析取项的否定（即一个与析取项相同但具有相反的真假值的句子），∨E使你能够推导出剩下的析取项。例如，在英语中：</p>
+<p class="whitespace-pre-wrap break-words">苏格拉底要么聪明，要么快乐。  
+苏格拉底不聪明。  
+苏格拉底快乐。</p>
+<p class="whitespace-pre-wrap break-words">推理模式如下：  
+W ∨ H  
+¬W  
+H  </p>
+<p class="whitespace-pre-wrap break-words">以下序列与上述序列的区别仅在于第二个析取项被否定，但同样是合理的：  
+苏格拉底要么聪明，要么快乐。  
+苏格拉底不快乐。  
+苏格拉底聪明。</p>
+<p class="whitespace-pre-wrap break-words">与∧E一样，∨E的形式表示包括两个部分：  
+(∨E)  p ∨ q, ¬p ⊦ q  
+    p ∨ q, ¬q ⊦ p  </p>
+<p class="whitespace-pre-wrap break-words">将∨E应用于上述序列得到：  
+1. + W ∨ H  
+2. + ¬H  
+3. ? W  
+4.  W      1, 2 ∨E  </p>
+<p class="whitespace-pre-wrap break-words">在这里，与其他地方一样，规则中出现的否定符号涉及句子的真假性，而不是所讨论的句子中实际出现的否定符号。给定一个析取式：  
+¬R ∨ ¬(S ∧ P)  
+以及一个与其中一个析取项相同但具有相反真假值的句子R，你可以推导出剩下的析取项：  
+¬(S ∧ P)  </p>
+<p class="whitespace-pre-wrap break-words">更正式的表达为：  
+1. + ¬R ∨ ¬(S ∧ P)  
+2. + R  
+3. ? ¬(S ∧ P)  
+4.  ¬(S ∧ P)      1, 2 ∨E  </p>
+<p class="whitespace-pre-wrap break-words">然而，你不能将规则应用于嵌套在另一个句子中的句子：  
+1. + P ∧ (Q ∨ ¬R)  
+2. + R  
+3.  Q      1, 2 ∨E（错误）  </p>
+<p class="whitespace-pre-wrap break-words">这一限制适用于∨E，就像它对每一条推理规则的适用一样。  </p>
+<ol class="-mt-1 list-decimal space-y-2 pl-8" depth="0">
+<li class="whitespace-normal break-words" index="0">3.08 练习题  
+请使用 MP、MT、HS、∧I、∧E、∨I 和 ∨E 来推导以下 Ls 逻辑序列：  </li>
+<li class="whitespace-normal break-words" index="1">+ P  
+   + (P ∨ ¬R) ⊃ Q  
+   ? Q  </li>
+<li class="whitespace-normal break-words" index="2">+ (P ∨ Q) ⊃ (R ∧ S)  
+   + P  
+   ? S  </li>
+<li class="whitespace-normal break-words" index="3">+ P ⊃ Q  
+   + P ∨ ¬R  
+   + R  
+   ? Q  </li>
+<li class="whitespace-normal break-words" index="4">+ P ⊃ (Q ∨ R)  
+   + ¬(Q ∨ R) ∨ S  
+   + ¬S  
+   ? ¬P  </li>
+<li class="whitespace-normal break-words" index="5">+ (P ∧ Q) ∨ ¬(R ∧ S)  
+   + S  
+   + R  
+   ? Q  </li>
+<li class="whitespace-normal break-words" index="6">+ P ⊃ ¬(Q ∧ R)  
+   + (Q ∧ R) ∨ S  
+   + ¬S  
+   ? ¬P  </li>
+<li class="whitespace-normal break-words" index="7">+ P ⊃ Q  
+   + P  
+   ? P ∧ (Q ∨ R)  </li>
+<li class="whitespace-normal break-words" index="8">+ P ⊃ (Q ∨ ¬S)  
+   + P ∧ S  
+   ? Q  </li>
+<li class="whitespace-normal break-words" index="9">+ P  
+   + ¬Q  
+   + ¬(Q ∨ R) ⊃ ¬P  
+   ? R  </li>
+<li class="whitespace-normal break-words" index="10">+ P ⊃ (Q ∧ R)  
+    + S ∨ ¬T  
+    + S ⊃ P  
+    + T  
+    ? Q  </li>
+<li class="whitespace-normal break-words" index="11">+ P ⊃ (Q ∨ R)  
+    + S ⊃ (P ∧ ¬R)  
+    + S ∧ T  
+    ? Q  </li>
+<li class="whitespace-normal break-words" index="12">+ P ⊃ Q  
+    + (Q ∨ (R ⊃ S)) ⊃ (S ∨ T)  
+    + ¬S ∧ P  
+    ? T  </li>
+<li class="whitespace-normal break-words" index="13">+ (P ∨ ¬Q) ⊃ R  
+    + P  
+    ? R ∨ (S ≡ ¬T)  </li>
+<li class="whitespace-normal break-words" index="14">+ P ⊃ Q  
+    + (Q ∨ R) ⊃ (R ∨ ¬S)  
+    + P ∧ ¬R  
+    ? ¬S  </li>
+<li class="whitespace-normal break-words" index="15">+ P ⊃ ¬(Q ∨ R)  
+    + Q ∧ S  
+    + T ∨ P  
+    ? T  </li>
+</ol>
+<p class="whitespace-pre-wrap break-words">（注：∨ 表示“或”，∧ 表示“且”，⊃ 表示“蕴含”，¬ 表示“否定”，? 表示需要推导的结论。）</p>
 </div></div></div></body></html>
