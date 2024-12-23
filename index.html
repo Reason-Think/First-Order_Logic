@@ -1704,4 +1704,490 @@ H  </p>
     + T ∨ P  
     ? T  </p>
 <p class="whitespace-pre-wrap break-words">（注：∨ 表示“或”，∧ 表示“且”，⊃ 表示“蕴含”，¬ 表示“否定”，? 表示需要推导的结论。）</p>
+<h2 class="font-600 text-xl font-bold" level="2">3.09 条件证明：条件推导（CP）</h2>
+<p class="whitespace-pre-wrap break-words">条件句“如果苏格拉底是哲学家，那么他是幸福的”显然可以从“哲学家是幸福的”这句话得出。你会如何证明这一点呢？一种合乎逻辑的推理方式如下：  
+哲学家是幸福的。如果苏格拉底是哲学家，他一定是幸福的。鉴于哲学家是幸福的，因此，如果苏格拉底是哲学家，他也会是幸福的。  </p>
+<p class="whitespace-pre-wrap break-words">通过这样的推理，你可以通过以下方式推导出一个条件句：(i) 假设其前件为真“仅为论证起见”，并且 (ii) 证明在你的其他前提下，如果这个前件为真，那么后件也为真。这等同于证明该条件句可以从你最初的前提中得出。  </p>
+<p class="whitespace-pre-wrap break-words">这种推理模式在 Lₛ 中通过条件推导规则（CP）加以体现。该规则允许你将句子 p 作为假设引入推导。如果可以证明 q 是从这个假设（以及任何其他可用前提）推导出来的，那么你有权确认条件句 p ⊃ q。该规则如下所示：  
+(CP)p  
+ ⫶  
+ q  
+ p ⊃ q  </p>
+<p class="whitespace-pre-wrap break-words">⎾ 表示一个假设性前提。它在推导中的作用类似于英语中“假设”一词的用法。⎿ 表示一个假设已被解除。  </p>
+<p class="whitespace-pre-wrap break-words">条件证明在推导条件句时非常有用（甚至常常是不可或缺的）。CP 允许你在推导的任何阶段引入所需条件句的前件。假设句 p 在推导中可以像前提一样使用，其假设性质由 ⎾ 标示。  在推导出 q（相关条件的后件）时，你通过在 q 周围加上 ⎿ 来消除这个假设并结束 CP 的应用。然后你引入条件句 p ⊃ q，其中前件是引入的假设句子，后件是最后推导出的句子，即 ⎿ 右侧的句子。为了明确假设的范围，将 ⎾ 和 ⎿ 连接起来，如以下示例所示：  
+1.	+ S ⊃ M  
+2.	? S ⊃ (S ∧ M)  
+3.	  S  
+4.	? S ∧ M  
+5.	  M			1, 3 MP  
+6.	  S ∧ M			3, 5 ∧I  
+7.	  S ⊃ (S ∧ M)	3–6 CP  </p>
+<p class="whitespace-pre-wrap break-words">这里，第 3 行将 S 引入为一个假设。第 4 行宣布了一个子目标 S ∧ M，用以标记借助假设推导出的句子。一旦这个子目标被推导出，假设 S 被消除，并且基于 S 的条件句得以证明并在第 7 行中呈现。这种推导体现了条件证明在逻辑推导中的作用。  </p>
+<p class="whitespace-pre-wrap break-words">CP 可以用来推导出推导所需的任何条件句。这个句子可以是，也可以不是结论。一旦引入一个假设，注意力就会从原始结论转移到子目标，即你最终打算推导出的条件句的后件。然而，当后件被推导出并且假设被括起来（表示它已被消除）时，括号内的句子将失效，不能在后续行中使用。  </p>
+<p class="whitespace-pre-wrap break-words">CP 是一个强大且灵活的规则。当你将 CP 的应用嵌套在一起时，这一点变得显而易见。嵌套的条件证明对于推导自身包含条件后件的句子非常有用。假设你需要推导以下句子：  
+(S ⊃ P) ⊃ (S ⊃ R)  
+你可以将 S ⊃ P 作为假设引入，并将 S ⊃ R 作为子目标。</p>
+<p class="whitespace-pre-wrap break-words">该子目标本身是一个条件句，因此可以使用嵌套的条件证明（CP）策略来证明它。以下推导具体展示了这一技巧：</p>
+<ol class="-mt-1 list-decimal space-y-2 pl-8" depth="0">
+<li class="whitespace-normal break-words" index="0">+ P ⊃ (Q ∨ R)  </li>
+<li class="whitespace-normal break-words" index="1">+ (S ∧ P) ⊃ ¬Q  </li>
+<li class="whitespace-normal break-words" index="2">? (S ⊃ P) ⊃ (S ⊃ R)  </li>
+<li class="whitespace-normal break-words" index="3">S ⊃ P  </li>
+<li class="whitespace-normal break-words" index="4">? S ⊃ R  </li>
+<li class="whitespace-normal break-words" index="5">S  </li>
+<li class="whitespace-normal break-words" index="6">? R  </li>
+<li class="whitespace-normal break-words" index="7">P				4, 6 MP  </li>
+<li class="whitespace-normal break-words" index="8">Q ∨ R				1, 8 MP  </li>
+<li class="whitespace-normal break-words" index="9">S ∧ P				6, 8 ∧I  </li>
+<li class="whitespace-normal break-words" index="10">¬Q				2, 10 MP  </li>
+<li class="whitespace-normal break-words" index="11">R				9, 11 ∨E  </li>
+<li class="whitespace-normal break-words" index="12">S ⊃ R				6–12 CP  </li>
+<li class="whitespace-normal break-words" index="13">(S ⊃ P) ⊃ (S ⊃ R)		4–13 CP  </li>
+</ol>
+<p class="whitespace-pre-wrap break-words">这样的推导一开始看起来可能令人却步，但通过练习，它们会成为构建推导的得心应手的工具。你只需认识到，当推导中需要一个条件句时，通常可以通过首先引入其前件作为假设，然后推导出其后件的方式来得出该句子。以下推导中应用了这一策略，以推导出一个句子，然后用该句子推导出结论：</p>
+<ol class="-mt-1 list-decimal space-y-2 pl-8" depth="0">
+<li class="whitespace-normal break-words" index="0">+ P ⊃ (¬Q ∨ R)  </li>
+<li class="whitespace-normal break-words" index="1">+ Q  </li>
+<li class="whitespace-normal break-words" index="2">+ (P ⊃ R) ⊃ S  </li>
+<li class="whitespace-normal break-words" index="3">? S  </li>
+<li class="whitespace-normal break-words" index="4">P  </li>
+<li class="whitespace-normal break-words" index="5">? R  </li>
+<li class="whitespace-normal break-words" index="6">¬Q ∨ R		1, 5 MP  </li>
+<li class="whitespace-normal break-words" index="7">R			2, 7 ∨E  </li>
+<li class="whitespace-normal break-words" index="8">P ⊃ R			5–8 CP  </li>
+<li class="whitespace-normal break-words" index="9">S			3, 9 MP  </li>
+</ol>
+<p class="whitespace-pre-wrap break-words">在这里，规则CP被用来推导出一个句子P ⊃ R，该句子在推导结论S的过程中被使用。</p>
+<p class="whitespace-pre-wrap break-words">练习 3.09：条件证明推导  
+根据前面讨论过的规则（包括条件证明规则 CP），为以下 Lₛ 序列构建逻辑推导。
+1.  + P ⊃ Q  
+    + P ⊃ (Q ⊃ R)  
+    + Q ⊃ (R ⊃ S)  
+    ? P ⊃ S  
+2.  + P ⊃ (S ⊃ (Q ∧ R))  
+    + (Q ∧ R) ⊃ ¬P  
+    + T ⊃ S  
+    ? P ⊃ ¬T  
+3.  + P ⊃ Q  
+    + R ⊃ S  
+    ? (P ∧ R) ⊃ (Q ∧ S)  
+4.  + (P ∧ Q) ⊃ R  
+    + P  
+    ? Q ⊃ R  
+5.  + P ⊃ ((Q ∨ R) ⊃ S)  
+    + (S ∨ T) ⊃ W  
+    ? P ⊃ (Q ⊃ W)  
+6.  + P ⊃ (Q ∨ R)  
+    + P ⊃ ¬Q  
+    ? P ⊃ R  
+7.  + (P ⊃ R) ⊃ (Q ⊃ S)  
+    + Q  
+    ? (P ⊃ R) ⊃ S  
+8.  + P ⊃ S  
+    + R ⊃ S  
+    ? P ⊃ (R ⊃ S)  
+9.  + (P ∧ R) ∨ ¬S  
+    + Q ∨ T  
+    + P ⊃ ¬Q  
+    ? (S ⊃ T) ∨ R  
+10. + Q ⊃ (T ∨ S)  
+    + ¬R ∧ ¬T  
+    + P  
+    ? P ∧ (Q ⊃ S)  
+11. + ¬P ∨ (S ⊃ Q)  
+    + S ∧ T  
+    ? P ⊃ (Q ∨ R)  
+12. + (P ∨ ¬T) ⊃ ((S ∨ T) ⊃ Q)  
+    + ¬P ∨ S  
+    ? (P ⊃ Q) ∨ (S ⊃ T)  
+13. + T ⊃ ¬P  
+    + T ∨ (S ∨ R)  
+    + ¬R  
+    ? P ⊃ S  
+14. + P ⊃ (S ∨ T)  
+    + (S ∨ T) ⊃ (Q ⊃ (R ∨ ¬S))  
+    + S  
+    ? P ⊃ (Q ⊃ R)  
+15. + (Q ⊃ R) ⊃ ¬S  
+    + T ⊃ (¬(Q ⊃ R) ⊃ P)  
+    ? S ⊃ (T ⊃ (P ∨ Q))  </p>
+<h2 class="font-600 text-xl font-bold" level="2">3.10 间接证明：间接推理 (IP) </h2>
+<p class="whitespace-pre-wrap break-words">一种常见的证明断言真实性的策略是，假设该断言是假的，并证明这一假设会导致荒谬的结论，从而推导出该断言必须为真。这种推理方式——归谬法（reductio ad absurdum，简称 reductio），或如本文所称的间接证明（indirect proof）——在日常生活、数学以及科学领域中广泛应用。  
+福尔摩斯通过证明假设嫌疑人史密斯在谋杀案发生时身处伦敦这一假设会导致不可能的结果，来论证史密斯不可能在伦敦：如果史密斯当时在伦敦，她就不可能目击到伯克郡发生的事故。一个数学证明表明不存在最大的素数，其方法是从假设存在一个最大的素数开始，并证明这一假设会导致矛盾。  
+在 Ls 中，间接证明所使用的格式类似于 CP：  
+(IP)	¬p  
+	⫶  
+	q ∧ ¬q  
+	p  
+假设你需要证明 A。使用 IP，你引入 A 的否定 ¬A 作为假设，然后尝试证明这一假设会导致矛盾：任何句子，无论是简单句还是复杂句，与其否定结合在一起。  
+q ∧ ¬q  
+一旦推导出矛盾，你就可以解除假设并写下你需要证明的句子。以下句子是矛盾的，因此根据这种描述，它们是悖论：  
+A ∧ ¬A  
+(P ∨ ¬Q) ∧ ¬(P ∨ ¬Q)  </p>
+<p class="whitespace-pre-wrap break-words">是否存在最大的素数？</p>
+<p class="whitespace-pre-wrap break-words">素数是只能被1和自身整除的数。是否存在一个最大的素数，也就是比所有其他素数都大的素数？</p>
+<p class="whitespace-pre-wrap break-words">希腊数学家欧几里得（约公元前300年）提出了一个著名的反证法，也称为间接证明，证明不存在最大的素数。</p>
+<ol class="-mt-1 list-decimal space-y-2 pl-8" depth="0">
+<li class="whitespace-normal break-words" index="0">假设存在一个最大的素数，记为x。  </li>
+<li class="whitespace-normal break-words" index="1">令y等于所有小于或等于x的素数的乘积再加1：  
+   y = (2 × 3 × 5 × 7 × . . . × x) + 1。  </li>
+<li class="whitespace-normal break-words" index="2">如果y是素数，那么x就不是最大的素数，因为y比x大。  </li>
+<li class="whitespace-normal break-words" index="3">如果y不是素数，那么y必有一个素数因子z，并且z不同于所有小于或等于x的素数（即2、3、5、7、……、x）。因此，z必定是一个大于x的素数。  </li>
+<li class="whitespace-normal break-words" index="4">然而，y要么是素数，要么不是素数。  </li>
+<li class="whitespace-normal break-words" index="5">所以，x不是最大的素数。  </li>
+<li class="whitespace-normal break-words" index="6">所以，不存在最大的素数。  </li>
+</ol>
+<p class="whitespace-pre-wrap break-words">参见E. Nagel和J. R. Newman，《哥德尔的证明》（纽约：纽约大学出版社，1967年），第37至38页。  </p>
+<p class="whitespace-pre-wrap break-words">正如在CP中一样，在IP中，一个假设总是伴随着一个子目标。在CP中，这个子目标是一个句子，构成了你希望推导出的条件句的结果部分。在IP中，子目标是推导出某个句子及其否定。子目标的非特定性通过一个“×”来表示。以下是一个IP应用的示例：  
+1. + P ∨ R  
+2. + R ⊃ S  
+3. + ¬S ∨ ¬R  
+4. ? P  
+5.  ¬P  
+6.  ? ×  
+7.  R   1, 5 ∨E  
+8.  S   2, 7 MP  
+9.  ¬S   3, 7 ∨E  
+10.  S ∧ ¬S   8, 9 ∧I  
+11. P   5–10 IP  </p>
+<p class="whitespace-pre-wrap break-words">正如第8行和第9行所示，你可以推导出S和¬S。这些句子相互矛盾。在第10行中，矛盾被明确指出，并且假设前提被撤销。请记住，矛盾句可以是任何与其否定结合的Ls语句，包括你可能希望推导出的句子，如以下示例所示：  
+1. + P ⊃ (Q ∨ R)  
+2. + ¬P ⊃ R  
+3. + ¬Q  
+4. ? R  
+5.  ¬R  
+6.  ? ×  
+7.  P   2, 5 MT  
+8.  Q ∨ R   1, 7 MP  
+9.  R   3, 8 ∨E  
+10.  R ∧ ¬R   5, 9 ∧I  
+11. R   5–10 IP  </p>
+<p class="whitespace-pre-wrap break-words">IP和CP可以嵌套使用，如以下推导示例所示：  
+1. + ¬Q ∨ (P ⊃ (R ∨ S))  
+2. + ¬S ∧ ¬R  
+3. ? P ⊃ ¬Q  
+4. P  
+5. ? ¬Q  
+6.  Q  
+7.  ? ×  
+8. P ⊃ (R ∨ S)   1, 6 ∨E  
+9. R ∨ S      4, 8 MP  
+10. ¬S       2 ∧E  
+11. R        9, 10 ∨E  
+12. ¬R       2 ∧E  
+13. R ∧ ¬R     11, 12 ∧I  
+14. ¬Q       6–13 IP  
+15. P ⊃ ¬Q     4–13 CP  </p>
+<p class="whitespace-pre-wrap break-words">这里，条件句的推导通过以下两步完成：（i）将条件句的前件作为假设，（ii）证明条件句后件的否定会导致矛盾。在第6行中，Q 被视为 ¬Q 的反面。你无需将 ¬¬Q 作为假设，也无需通过双重否定原则将其转换为 Q。在 IP 的应用中，否定符号和其他规则一样，用于指示极性。IP 应理解为允许假设一个句子，其极性与目标句相反。</p>
+<p class="whitespace-pre-wrap break-words">第 3.10 节练习  
+根据前面讨论的规则（包括间接证明 IP），推导以下逻辑序列：  
+1.  + P ⊃ Q
+    + R ⊃ P
+    + R ∨ (Q ∧ S)
+    ? Q
+2.  + P ∨ Q
+    + P ⊃ (R ∧ S)
+    + (R ∧ S) ⊃ Q
+    ? Q
+3.  + (P ∨ Q) ⊃ R
+    + ¬R
+    ? ¬P
+4.  + ¬R ⊃ ¬(¬P ∨ Q)
+    + ¬R
+    ? P
+5.  + (P ∨ Q) ⊃ (R ⊃ ¬S)
+    + (S ∨ T) ⊃ (P ∧ R)
+    ? ¬S
+6.  + P ⊃ Q
+    + S ⊃ T
+    ? (P ∨ S) ⊃ ¬(¬Q ∧ ¬T)
+7.  + P ⊃ ((Q ∧ R) ∨ S)
+    + (Q ∧ R) ⊃ ¬P
+    + S ⊃ (T ⊃ ¬P)
+    ? P ⊃ ¬T
+8.  + (P ∨ Q) ⊃ (R ⊃ S)
+    + ¬P ⊃ T
+    + R ∧ ¬S
+    ? T
+9.  + P ⊃ Q
+    + (Q ∨ R) ⊃ S
+    + ¬S
+    ? ¬(P ∨ S)
+10. + P ⊃ (¬Q ∧ R)
+    + S ∨ ¬T
+    + P ∨ T
+    ? Q ⊃ S
+11. + S ⊃ (Q ∨ R)
+    + S ∨ (P ⊃ S)
+    ? P ⊃ (Q ∨ R)
+12. + ¬(S ∧ T) ⊃ (Q ⊃ R)
+    + P ⊃ ¬T
+    ? P ⊃ (Q ⊃ R)
+13. + P ∨ Q
+    + (P ∨ R) ⊃ (S ⊃ T)
+    + S ∧ (T ⊃ Q)
+    ? Q
+14. + P ∨ S
+    + S ⊃ (R ⊃ T)
+    + R ∧ (T ⊃ P)
+    ? P ∨ Q
+15. + P ⊃ S
+    + P ∨ (S ∧ T)
+    ? S ∨ ¬T</p>
+<h2 class="font-600 text-xl font-bold" level="2">3.11 转换规则：交换律 (Com)、结合律 (Assoc)、重言式 (Taut)</h2>
+<p class="whitespace-pre-wrap break-words">迄今为止讨论的推理规则，旨在通过推导的构建，从句子中推导出句子。这些规则是否足以证明 Ls 中任何有效序列的有效性？  
+请考虑以下序列：  
+1. + P ⊃ Q  
+2. + (R ∨ Q) ⊃ S  
+3. + ¬S  
+4. ? ¬(P ∨ S)  </p>
+<p class="whitespace-pre-wrap break-words">假设你尝试使用 IP 推导出结论。  
+1. + P ⊃ Q  
+2. + (R ∨ Q) ⊃ S  
+3. + ¬S  
+4. ? ¬(P ∨ S)  
+5.  P ∨ S  
+6.  ? ×  
+7.  P			3, 5 ∨E  
+8.  Q			1, 7 MP  
+9.  Q ∨ R			8 ∨I  </p>
+<p class="whitespace-pre-wrap break-words">你可以看到 S 与第 3 行的 ¬S 构成矛盾。你是否可以通过 MP 利用第 2 行和第 9 行得到 S，从而形成矛盾？  
+如果不是因为 MP 无法应用于第 2 行和第 9 行，这将是一个可行的策略。MP 需要一个条件句及其前件。第 9 行的句子 Q ∨ R 并不是第 2 行条件句 (R ∨ Q) ⊃ S 的前件。Q ∨ R 和 R ∨ Q 是不同的 Ls 句子。  </p>
+<p class="whitespace-pre-wrap break-words">在英语中，你可以颠倒析取句中析取项的顺序，而不会影响句子的真值条件。以下句子具有相同的含义：  
+苏格拉底是聪明的，或者苏格拉底是快乐的。  
+苏格拉底是快乐的，或者苏格拉底是聪明的。  </p>
+<p class="whitespace-pre-wrap break-words">同样的交换原则也适用于 Ls 中的析取句。你可以颠倒 Ls 析取句中析取项的顺序，从而生成一个与原句具有相同真值条件的新句子：  
+W ∨ H  
+H ∨ W  </p>
+<p class="whitespace-pre-wrap break-words">在英语和 Ls 中，合取也是可交换的。在英语和 Ls 中，颠倒合取句中合取项的顺序对整个句子的真值条件没有影响。  
+苏格拉底是聪明的，并且苏格拉底是快乐的。  
+苏格拉底是快乐的，并且苏格拉底是聪明的。  </p>
+<p class="whitespace-pre-wrap break-words">这些句子的 Ls 对应句在逻辑上也是等价的：它们具有相同的真值条件。  
+W ∧ H  
+H ∧ W  </p>
+<p class="whitespace-pre-wrap break-words">这些说明构成了一条允许颠倒合取项和析取项的转换规则，即交换规则。  
+(Com)  p ∧ q ⊣⊢ q ∧ p  
+     p ∨ q ⊣⊢ q ∨ p  </p>
+<p class="whitespace-pre-wrap break-words">Com 允许颠倒合取和析取对，无论是原子句还是非原子句。将 Com 应用于以下句子：  
+¬(A ∧ B) ∨ (P ⊃ Q)  
+(A ∨ (P ⊃ Q)) ∧ ¬(¬A ∧ (Q ∨ R))  
+分别得到：  </p>
+<p class="whitespace-pre-wrap break-words">(P ⊃ Q) ∨ ¬(A ∧ B)  
+¬(¬A ∧ (Q ∨ R)) ∧ (A ∨ (P ⊃ Q))  
+添加交换律（Com）使得能够完成之前未完成的推导：  
+1. + P ⊃ Q  
+2. + (R ∨ Q) ⊃ S  
+3. + ¬S  
+4. ? ¬(P ∨ S)  
+5.   P ∨ S  
+6.   ×  
+7.   P			3, 5 ∨E  
+8.   Q			1, 7 MP  
+9.   Q ∨ R		8 ∨I  
+10.  R ∨ Q		9 Com  
+11.  S			2, 10 MP  
+12.  S ∧ ¬S		3, 11 ∧I  
+13. ¬(P ∨ S)		5–12 IP  
+变换规则与推理规则不同，具有双向性。与左侧形式匹配的句子可以转换为与右侧形式匹配的句子，反之亦然。双向性通过背靠背的推导符号（⊣⊢）表示，表明两侧表达式可以相互推导。  
+变换规则与推理规则的另一个区别在于，变换规则可以应用于句子的一部分，而推理规则（例如模态推理规则MP）只能应用于完整的句子。MP不能用于以下序列中推导出结论R：  
+1. + P ∨ (Q ⊃ R)  
+2. + Q  
+3. ? R  
+⫶	⫶  
+仅适用于完整句子的限制不适用于变换规则。变换规则允许用具有相同真值条件的逻辑等价句子替换句子的一部分。Ls的基于真值功能的结构意味着，用逻辑等价的句子替换较大句子的一部分，不会影响较大句子的真值条件。因此，尽管在以下序列中应用交换律（Com）仅转换了句子的一部分，但这是完全合理的：  
+1. P ⊃ (Q ∨ R)  
+2. P ⊃ (R ∨ Q)   1 Com  
+即使对交换律应用的析取式的前件进行了否定，变换仍然成立：  
+1. P ⊃ ¬(Q ∨ R)  
+2. P ⊃ ¬(R ∨ Q)   1 Com  
+该规则应用于括号内的句子。由于Ls是基于真值功能的，如果Q ∨ R和R ∨ Q的真值条件相同，那么P ⊃ ¬(Q ∨ R)和P ⊃ ¬(R ∨ Q)的真值条件也相同。  </p>
+<p class="whitespace-pre-wrap break-words">转换规则  
+在实际操作中，转换规则有助于操作Ls句子，以形成适合应用一个或多个推理规则的结构。尽管转换规则所体现的逻辑关系在日常中十分常见，但这些规则本身可能看起来不像自然推理的模式。  
+可以将转换规则看作一种模式合成工具，它使您能够灵活调整Ls句子，从而生成便于应用推理规则的模式。</p>
+<p class="whitespace-pre-wrap break-words">第二个变形规则是结合律规则（Assoc），它允许调整括号的位置以改变 ∧ 和 ∨ 的序列结构。  
+（Assoc）  p ∧ (q ∧ r) ⊣⊢ (p ∧ q) ∧ r  
+      p ∨ (q ∨ r) ⊣⊢ (p ∨ q) ∨ r  
+使用 Assoc，例如可以将以下句子  
+¬A ∨ (B ∨ ¬C)  
+转换为  
+(¬A ∨ B) ∨ ¬C  
+与一般的变形规则一样，Assoc 也可以应用于作为其他句子组成部分的句子。以下是 Assoc 在一个序列中的应用：  
+1. (M ∧ (A ∧ ¬C)) ∧ (¬P ⊃ Q)  
+2. ((M ∧ A) ∧ ¬C) ∧ (¬P ⊃ Q)    1 Assoc  
+对于第二个句子，该规则也可以以不同方式应用。例如，可以将 A ∧ ¬C 视为 Assoc 公式中的 q 元素，从而得到：  
+3. M ∧ ((A ∧ ¬C) ∧ (¬P ⊃ Q))    1 Assoc  
+如何在某种情况下应用规则取决于你想要推导出的句子，而这又取决于推导过程。  
+尽管变形规则与推理规则不同，可以适用于句子的一部分，但它们与推理规则共享一个通用限制：不能通过应用多个规则得出一行结果。无论是推导还是行走，都需要一步一步地进行。在推导一行时，不允许应用多个规则，也不允许多次应用同一个规则。这意味着以下序列需要两步，即两次应用 Com：  
+1. +(P ∨ Q) ∧ R  
+2. ? R ∧ (Q ∨ P)  
+3.  R ∧ (P ∨ Q)     1 Com  
+4.  R ∧ (Q ∨ P)     3 Com  
+Com 不允许直接推导出第 4 行。推导中的每一行都源于单个规则的一次应用。  
+在这个语境下，第三个变形规则值得一提。该规则是重言式原则（Taut），其公式如下：  
+（Taut）  p ⊣⊢ p ∧ p  
+      p ⊣⊢ p ∨ p  
+Taut 表达了一个句子与其自身的合取或析取形式在逻辑上是等价的原则。  
+“重言式原则”这一标签可能具有误导性。如果表述得当，Ls 中的每个推导规则都表达了一个重言式。在这种情况下使用该标签可以通过以下理由进行辩护：Taut 所描述的关系显然是重言式的，而其他规则所涵盖的关系则不那么明显。如果你重复说两遍同一个句子，那么显然你所表达的内容与只说一遍是一样的。</p>
+<p class="whitespace-pre-wrap break-words">尽管同义反复原则在英语中几乎没有实际应用，但它在Ls中却可能发挥重要作用。与任何推导规则一样，它适用于任何形式符合要求的句子，无论是简单的还是复杂的，如下所示：  
+1.	+ A ∨ A  
+2.	+ ¬(P ⊃ Q)  
+3.	+ ¬(A ∧ ¬B) ∨ ¬(A ∧ ¬B)  
+4.	 A              1 Taut（重言式规则）  
+5.	 ¬(P ⊃ Q) ∧ ¬(P ⊃ Q)      2 Taut（重言式规则）  
+6.	 ¬(A ∧ ¬B)          3 Taut（重言式规则）  
+Taut规则可以从左向右应用，如第5行所示，也可以从右向左应用，如第4行和第6行所示。  </p>
+<p class="whitespace-pre-wrap break-words">推导策略  
+单一前提推导：  
+在由单一前提组成的推导中，观察此前提与目标结论之间的差异，并通过应用规则逐步缩小这种差异。  
+从较大的差异开始，逐步向较小的差异推进，比较当前行与结论，直到二者匹配。  
+在这种情况下，从结论“逆向推导”到前提可能特别有效。  </p>
+<p class="whitespace-pre-wrap break-words">练习 3.11  
+根据迄今讨论的规则（包括 Com、Assoc 和 Taut），为以下 Ls 序列构建推导。请记住：每行只能应用一次规则。  </p>
+<p class="whitespace-pre-wrap break-words">1.  + P ∨ (Q ∧ ¬R)  
+    ? (¬R ∧ Q) ∨ P  
+
+2.  + (P ⊃ Q) ∨ (R ∨ S)  
+    ? (S ∨ R) ∨ (P ⊃ Q)  
+
+3.  + (P ∧ P) ∨ (Q ∨ R)  
+    ? R ∨ (P ∨ Q)  
+
+4.  + (P ∨ Q) ∧ (R ∧ S)  
+    ? (R ∧ (P ∨ Q)) ∧ S  
+
+5.  + (P ∨ (Q ⊃ R)) ∨ (S ∨ T)  
+    ? ((P ∨ S) ∨ T) ∨ (Q ⊃ R)  
+
+6.  + P ⊃ ((R ∨ Q) ⊃ S)  
+    + (T ∨ S) ⊃ W  
+    ? P ⊃ (Q ⊃ W)  
+
+7.  + ¬(R ∧ T) ⊃ ¬S  
+    + (P ∨ (Q ∧ Q)) ⊃ S  
+    ? Q ⊃ R  
+
+8.  + (P ∨ (Q ∨ R)) ⊃ T  
+    + (S ∨ ¬T) ⊃ R  
+    ? T  
+
+9.  + P ⊃ Q  
+    + (R ∨ S) ⊃ ¬Q  
+    ? ¬(P ∧ S)  
+
+10. + P ⊃ ((Q ∧ R) ∨ S)  
+    + (R ∧ Q) ⊃ ¬P  
+    + T ⊃ ¬S  
+    ? P ⊃ ¬T  
+
+11. + (P ∨ Q) ⊃ (R ∧ S)  
+    + Q  
+    ? T ∨ R  
+
+12. + P ⊃ R  
+    + P ∨ (R ∧ S)  
+    ? Q ∨ R  
+
+13. + P ⊃ (S ⊃ T)  
+    + S ∧ (Q ∨ (¬T ∨ ¬P))  
+    + Q ⊃ (S ⊃ R)  
+    ? P ⊃ (Q ∧ R)  
+
+14. + P ∨ S  
+    + S ⊃ (T ⊃ P)  
+    + S ⊃ T  
+    ? R ∨ (Q ∨ P)  
+
+15. + S ⊃ Q  
+    + Q ∨ (S ∧ T)  
+    ? P ∨ (Q ∧ Q)  </p>
+<h2 class="font-600 text-xl font-bold" level="2">3.12 转换法则：德摩根定律</h2>
+<p class="whitespace-pre-wrap break-words">下一个转换法则是德摩根定律（DeM）（以英国逻辑学家奥古斯都·德摩根 [1808–1871] 命名），它揭示了合取与析取的一项重要逻辑特性。以下是一个英文合取句：  
+苏格拉底是智慧的并且苏格拉底是快乐的。  
+如果你稍作思考便会发现，这个合取句等价于以下析取句：  
+并非苏格拉底不智慧或苏格拉底不快乐。  
+同样地，一个析取句：  
+苏格拉底是智慧的或苏格拉底是快乐的。  
+等价于一个经过适当否定的合取句：  
+并非苏格拉底不智慧并且苏格拉底不快乐。  
+这些否定句显得生硬且笨拙，但稍作思考便会发现它们与更优雅的对应句具有相同的含义。这种意义上的等价性通过德摩根定律表达如下：  
+(DeM)  p ∧ q ⊣⊢ ¬(¬p ∨ ¬q)  
+      p ∨ q ⊣⊢ ¬(¬p ∧ ¬q)  
+在推导过程中，德摩根定律允许在 ∨ 和 ∧ 之间进行转换。将德摩根定律应用于上述英文句子的符号表示形式，可以得到以下转换对照：  
+1. + W ∧ H  
+2. + W ∨ H  
+3. ¬(¬W ∨ ¬H)      1 DeM  
+4. ¬(¬W ∧ ¬H)      2 DeM  </p>
+<p class="whitespace-pre-wrap break-words">请记住，在规则中出现的否定符号应被解释为对被否定表达式的真值性进行反转的指令，德摩根定律（DeM）允许将逻辑上等价的合取转换为析取，或将逻辑上等价的析取转换为合取，前提是需要反转（i）每个合取分项（或析取分项）的真值性，以及（ii）整个表达式的真值性。以析取  
+A ∨ ¬B  
+为例，德摩根定律允许将其转换为逻辑上等价的合取  
+¬(¬A ∧ B)  
+每个析取分项的真值性被反转，整个表达式的真值性也被反转。将德摩根定律应用于  
+¬(P ∧ ¬(Q ∨ R))  
+会得到逻辑上等价的表达式  
+¬P ∨ (Q ∨ R)  
+在这里，合取分项的真值性被反转。P 变为 ¬P，¬(Q ∨ R) 变为 (Q ∨ R)。整个表达式的真值性在原表达式中是负的，而在转换后的表达式中是正的。德摩根定律可以再次应用于括号内的表达式部分，得到  
+¬P ∨ ¬(¬Q ∧ ¬R)  
+然而，请记住，从原表达式推导出该表达式需要两次应用德摩根定律。</p>
+<p class="whitespace-pre-wrap break-words">推导启示  
+否定标记：  
+在寻找适用规则时，不要被否定标记干扰；否定标记会自行解决。  
+专注于基本句式和连接词的结构。在推导过程中，否定标记不可避免地会出现或消失。只要不出现粗心的错误，很有可能推导出具有正确连接词、正确原子成分且顺序正确的句子，并最终得到否定标记分布正确的句子。  </p>
+<p class="whitespace-pre-wrap break-words">练习题 3.12  
+使用迄今讨论的所有规则（包括德摩根定律 DeM），为以下 Ls 序列构建推导。请记住：每行仅能应用一次规则。  
+1.  + P ∨ (Q ∧ R)
+    ? ¬(¬P ∧ (¬Q ∨ ¬R))
+
+2.  + ¬(¬P ∨ (¬Q ∧ ¬R))
+    ? P ∧ (Q ∨ R)
+
+3.  + (¬P ∨ ¬Q) ∧ (R ∧ S)
+    ? ¬((¬R ∨ ¬S) ∨ (P ∧ Q))
+
+4.  + P ⊃ ¬(Q ∧ (R ∨ ¬S))
+    ? P ⊃ (¬Q ∨ (¬R ∧ S))
+
+5.  + ¬((¬P ∧ ¬Q) ∨ (¬R ∨ S))
+    ? (P ∨ Q) ∧ (R ∧ ¬S)
+
+6.  + Q ⊃ S
+    + S ⊃ P
+    ? P ∨ ¬Q
+
+7.  + P ⊃ (Q ⊃ ¬(R ∨ S))
+    + Q
+    ? P ⊃ ¬S
+
+8.  + P ⊃ (Q ∨ S)
+    + ¬S
+    ? ¬P ∨ Q
+
+9.  + P ⊃ (Q ∨ S)
+    + P ⊃ (R ∨ ¬S)
+    ? P ⊃ (Q ∨ R)
+
+10. + P ∨ (Q ∨ R)
+    + Q ⊃ (R ∧ S)
+    ? P ∨ R
+
+11. + P ∧ (S ⊃ ¬Q)
+    + P ⊃ S
+    ? ¬(¬P ∨ Q)
+
+12. + S ∨ (Q ⊃ R)
+    + P ∨ (Q ∧ (T ∨ ¬R))
+    ? S ∨ (T ∨ P)
+
+13. + R ⊃ ¬(¬P ∧ Q)
+    + R ∨ T
+    + Q ∧ (P ⊃ ¬S)
+    ? S ⊃ T
+
+14. + S ∨ (P ⊃ (R ⊃ Q))
+    + S ∨ P
+    + R
+    ? Q ∨ S
+
+15. + S ⊃ (P ∧ ¬Q)
+    + S ∨ (P ∧ R)
+    ? P</p>
 </div></div></div></body></html>
